@@ -261,22 +261,26 @@ li p {
     align-items: center;
 }
 
-.slider, .slidBCP, .slidBCH, .slidBMF {
+.imgEquipamento, .slidBCP, .slidBCH, .slidBMF {
     width: 25vw;
     height: 67vh;
     overflow: hidden;
 }
 
-.slides, .slidBCP, .slidBCH, .slidBMF {
+.slides, .slidBCP {
     display: flex;
+    width: 300vw;
+}
+
+.slidBCH, .slidBMF {
     width: 300vw;
 }
 
 .navigation {
     position: relative;
     display: flex;
-    bottom: 30px;
-    left: 140px;
+    bottom: 3vh;
+    left: 10.5vw;
 }
 
 .bar {
@@ -308,15 +312,15 @@ input {
     height: 67vh;
 }
 
-#radio1:checked ~ .slidBCP .first {
+#radio1:checked ~ .slidBCP .first,  #radio1:checked ~ .slidBMF .first #radio1:checked ~ .slidBCH .first {
     margin-left: 0;
 }
 
-#radio2:checked ~ .slidBCP .first{
+#radio2:checked ~ .slidBCP .first, #radio2:checked ~ .slidBMF .first, #radio2:checked ~ .slidBCH .first {
     margin-left: -25vw;
 }
 
-#radio3:checked ~ .slidBCP .first {
+#radio3:checked ~ .slidBCP .first, #radio3:checked ~ .slidBMF .first, #radio3:checked ~ .slidBCH .first {
     margin-left: -50vw;
 }
 
@@ -338,12 +342,15 @@ input {
 
 #produzido {
     color:orangered;
-    margin: 0;
-    font-size: 1rem;
 }
 
 .footer p {
     color: white;
     margin: 0;
-    font-size: 1rem;
+    padding: 0;
+    font-size: 1.2rem;
+}
+
+li details summary {
+    color: #234874;
 }

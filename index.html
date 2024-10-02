@@ -274,16 +274,14 @@
                 <button id="bmf" onclick="bmf()">Bancada de Mecânica dos Fluidos</button>
             </div>
 
-            <div class="slider">
+            <div class="imgEquipamento">
                 <div class="slides">
-                    
+
+                    <input type="radio" name="radio" id="radio1" checked>
+                    <input type="radio" name="radio" id="radio2">
+                    <input type="radio" name="radio" id="radio3">
+
                     <div class="slidBCP">
-
-                        <input type="radio" name="radio" id="radio1" checked>
-                        <input type="radio" name="radio" id="radio2">
-                        <input type="radio" name="radio" id="radio3">
-
-                    
                         <div class="slid first">
                             <img src="img/bancadaCP/2A.jpeg" alt="">
                         </div>
@@ -296,76 +294,76 @@
                             <img src="img/bancadaCP/2C.jpeg" alt="">
                         </div>
                     </div>
-
+                    
                     <div class="slidBCH" style="display: none;">
                         <div class="slid first">
-                            <img src="img/bancadaCP/3A.jpeg" alt="">
+                            <img src="img/bancadaCH/3A.jpeg" alt="">
                         </div>
 
                         <div class="slid">
-                            <img src="img/bancadaCP/3B.jpeg" alt="">
+                            <img src="img/bancadaCH/3B.jpeg" alt="">
                         </div>
 
                         <div class="slid">
-                            <img src="img/bancadaCP/3C.jpeg" alt="">
+                            <img src="img/bancadaCH/3C.jpeg" alt="">
+                        </div>
+                    </div>
+
+                    <div class="slidBMF" style="display: none;">
+                        <div class="slid first">
+                            <img src="img/bancadaMF/4A.jpeg" alt="">
                         </div>
 
-                        <div class="slidBMF">
-                            <div class="slid first">
-                                <img src="img/bancadaCP/4A.jpeg" alt="">
-                            </div>
-    
-                            <div class="slid">
-                                <img src="img/bancadaCP/4B.jpeg" alt="">
-                            </div>
-    
-                            <div class="slid">
-                                <img src="img/bancadaCP/4C.jpeg" alt="">
-                            </div>
+                        <div class="slid">
+                            <img src="img/bancadaMF/4B.jpeg" alt="">
+                        </div>
+
+                        <div class="slid">
+                            <img src="img/bancadaMF/4C.jpeg" alt="">
                         </div>
                     </div>
                 </div>
 
-                <div class="navigation">
-                    <label class="bar" for="radio1"></label>
-                    <label class="bar" for="radio2"></label>
-                    <label class="bar" for="radio3"></label>
-                </div>
-
-            </div> 
-
-            <div class="infoBCP">
-                <h2>Bancadas de Circuitos Pneumáticos</h2>
-                <p>  O PHI Lab conta com 3 bancadas duplas para montagem circuitos pneumáticos e eletropneumáticos, as
-                    quais podem proporcionar montagens de experimentos para até 6 grupos simultaneamente. Cada bancada
-                    conta com um gaveteiro contendo uma série de componentes pneumáticos e eletropneumáticos, de modo a
-                    mantê-los organizados e corretamente armazenados.</p>
+            <div class="navigation">
+                <label class="bar" for="radio1"></label>
+                <label class="bar" for="radio2"></label>
+                <label class="bar" for="radio3"></label>
             </div>
-
-            <div class="infoBCH" style="display: none;">
-                <h2>Bancadas de Circuitos Hidraulicos</h2>
-                <p>  O PHI Lab conta com 1 bancada dupla para montagem circuitos hidráulicos e eletrohidráulicos,
-                    bancada esta que pode proporcionar montagens de experimentos para até 2 grupos simultaneamente. A
-                    bancada conta com dois gaveteiros contendo uma série de componentes hidráulicos e eletrohidráulicos,
-                    de modo a mantê-los organizados e corretamente armazenados.</p>
-            </div>
-
-            <div class="infoBMF" style="display: none;">
-                <h2>Bancadas de Mecanica dos Fluidos</h2>
-                <p>  O PHI Lab conta com 1 bancada dupla para montagem de experimentos de mecânicas dos fluidos e
-                    máquinas de fluxo, bancada esta que pode proporcionar montagens de experimentos para até 2 grupos
-                    simultaneamente. A bancada conta com aparatos que podem proporcionar, entre outros experimentos, o
-                    número de Reynolds, perda de carga distribuída, perda de carga localizada, medição de velocidade de
-                    escoamento através de Medidor Venturi e associação de bombas centrífugas.</p>
-            </div>
-        </div>
-        
-        <div class="footer">
-            <p id="produzido">Produzido por</p>
-            <p>Fabrica de Software</p>
-            <img src="/img/fundos/logo-claro.webp" alt="">
 
         </div>
+
+        <div class="infoBCP">
+            <h2>Bancadas de Circuitos Pneumáticos</h2>
+            <p>  O PHI Lab conta com 3 bancadas duplas para montagem circuitos pneumáticos e eletropneumáticos, as
+                quais podem proporcionar montagens de experimentos para até 6 grupos simultaneamente. Cada bancada
+                conta com um gaveteiro contendo uma série de componentes pneumáticos e eletropneumáticos, de modo a
+                mantê-los organizados e corretamente armazenados.</p>
+        </div>
+
+        <div class="infoBCH" style="display: none;">
+            <h2>Bancadas de Circuitos Hidraulicos</h2>
+            <p>  O PHI Lab conta com 1 bancada dupla para montagem circuitos hidráulicos e eletrohidráulicos,
+                bancada esta que pode proporcionar montagens de experimentos para até 2 grupos simultaneamente. A
+                bancada conta com dois gaveteiros contendo uma série de componentes hidráulicos e eletrohidráulicos,
+                de modo a mantê-los organizados e corretamente armazenados.</p>
+        </div>
+
+        <div class="infoBMF" style="display: none;">
+            <h2>Bancadas de Mecanica dos Fluidos</h2>
+            <p>  O PHI Lab conta com 1 bancada dupla para montagem de experimentos de mecânicas dos fluidos e
+                máquinas de fluxo, bancada esta que pode proporcionar montagens de experimentos para até 2 grupos
+                simultaneamente. A bancada conta com aparatos que podem proporcionar, entre outros experimentos, o
+                número de Reynolds, perda de carga distribuída, perda de carga localizada, medição de velocidade de
+                escoamento através de Medidor Venturi e associação de bombas centrífugas.</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p id="produzido">Produzido por</p>
+        <p>Fabrica de Software</p>
+        <img src="/img/fundos/logo-claro.webp" alt="">
+
+    </div>
 
 </body>
 
