@@ -9,11 +9,16 @@ body {
     overflow-x: hidden;
 }
 
+.cabecalho a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 1vw;
+    font-size: 0.82rem;
     height: 8.5vh;
     box-shadow: 0vh 0.5vh 2vh rgba(0, 0, 0, 0.5);
     position: relative; 
@@ -24,7 +29,7 @@ body {
     background-color: blue;
     height: 83vh;
     display: flex;
-    background-image: url(/img//fundos/fundoInicial.png);
+    background-image: url(/img/fundos/fundoInicial.png);
     background-size: cover;
     justify-content: space-around;
     align-items: center;
@@ -32,12 +37,12 @@ body {
 
 h1 {
     color: white;
-    font-size: 5.8vh;
+    font-size: 2.3rem;
 }
 
 h4 {
     color: white;
-    font-size: 3vh; 
+    font-size: 1.2rem; 
 }
 
 .img1 {
@@ -45,6 +50,7 @@ h4 {
     width: 19vw;
     background-color: antiquewhite;
     border-radius: 2.8vh;
+    object-fit: cover;
 }
 
 .img2 {
@@ -52,6 +58,7 @@ h4 {
     width: 10vw;
     background-color: orange;
     border-radius: 2.8vh;
+    object-fit: cover;
 }
 
 .imgInicial {
@@ -76,7 +83,7 @@ h4 {
 
 h2 {
     color: #255FA0;
-    font-size: 5.3vh;
+    font-size: 2.1rem;
 }
 
 .sobre {
@@ -88,7 +95,7 @@ h2 {
 }
 
 p {
-    font-size: 3.1vh;
+    font-size: 1.25rem;
     line-height: 5.1vh;
 }
 
@@ -123,7 +130,7 @@ p {
 }
 
 .nome {
-    font-size: 2.3vh;
+    font-size: 0.95rem;
     line-height: 2.7vh;
 }
 
@@ -140,24 +147,25 @@ p {
     height: 26vh;
 }
 
-.foto1, .foto2, .foto3 {
-    background-color: rgb(0, 0, 0);
+.foto {
     width: 7vw;
     height: 7vw;
     border-radius: 50vw;
     margin-right: 1vw;
     margin-left: 1.5vw;
+    object-fit: cover;
 }
 
 .caixaProf button {
     border: none;
     background-color: #1C3C61;
-    font-size: 1vw;
+    font-size: 0.9rem;
     width: 10vw;
     height: 5vh;
     border-radius: 2.8vh;
     color: #F5F5F5;
     margin-top: 1vh;
+    cursor: pointer;
 }
 
 .cardProf {
@@ -167,18 +175,25 @@ p {
     justify-content: space-between;
     align-content: space-between;
     height: 61vh;
-    margin-left: 20%;
     margin-top: 8vh;
 }
 
 .infoProfs {
     width: 15vw;
     padding-bottom: 2vh;
+
 }
 
-.professores {
+#professores {
     margin-top: 12vh;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#professores .p {
+    width: 75vw;
 }
 
 .conteudoEquipamentos {
@@ -190,13 +205,14 @@ p {
 }
 
 .opcoes button {
-    font-size: 1.5vw;
+    font-size: 1.3rem;
     padding-top: 5vh;
     padding-bottom: 7vh;
     width: 18vw;
     text-align: justify;
     background: none;
     border: none;
+    cursor: pointer;
 }
 
 .opcoes {
@@ -219,11 +235,11 @@ p {
 }
 
 .infoBCP h2, .infoBCH h2, .infoBMF h2 {
-    font-size: 1.8vw;
+    font-size: 1.5rem;
     margin-top: 0;
 }
 
-.equipamentos, .disciplinas {
+#equipamentos, #disciplinas {
     margin-top: 10vh;
     display: flex;
     flex-direction: column;
@@ -236,20 +252,21 @@ p {
 
 summary {
     color: #1F1F1F;
-    font-size: 1.7vw;
+    font-size: 1.6rem;
     line-height: 7.5vh;
     font-weight: bold;
+    cursor: pointer;
 }
 
 ul summary {
-    font-size: 1.4vw;
+    font-size: 1.2rem;
     font-weight: bold;
 }
 
 ul p, ul a {
     text-align: justify;
     line-height: 4vh;
-    font-size: 1.15vw;
+    font-size: 1rem;
     width: 50vw;
     margin: 0 0 0 4vw;
 }
@@ -352,5 +369,98 @@ input {
 }
 
 li details summary {
-    color: #234874;
+    color: #13355e;
+}
+
+@media (width <= 768px) {
+    html {
+        font-size: 13px;
+    }
+
+    .img1 {
+        height: 16vh;
+        width: 19vw;
+    }
+    
+    .img2 {
+        height: 16vh;
+        width: 10vw;
+    }
+
+    .imgInicial {
+        height: 35vh;
+    }
+
+    .cabecalho {
+        width: 36vw;
+    }
+
+    .img4 {
+        height: 23vh;
+    }
+    
+    .img3 {
+        height: 22vh;
+    }
+
+    .paginaInicial {
+        height: 70vh;
+    }
+}
+
+@media (width <= 600px) {
+    html {
+        font-size: 10px;
+    }
+
+    .paginaInicial {
+        height: 60vh;
+    }
+
+    .imgInicial {
+        height: 35vh;
+    }
+
+    .cabecalho {
+        width: 36vw;
+    }
+
+    .img4 {
+        width: 20vw;
+        height: 20vh;
+    }
+    
+    .img3 {
+        width: 20vw;
+        height: 20vh;
+    }
+
+    .imgSobre {
+        width: 65vw;
+    }
+
+    .cardProf {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+        height: 85vh;
+    }
+
+    .caixaProf {
+        width: 40vw;
+        align-items: center;
+    }
+
+    .infoProfs p{
+        font-size: 1.2rem;
+    }
+
+    .infoProfs {
+        width: 20vw;
+    }
+
+    .foto {
+        width: 12vw;
+        height: 12vw;
+    }
 }

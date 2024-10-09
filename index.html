@@ -18,9 +18,9 @@
             <h3 id="phiHeader">PHI Lab</h3>
 
             <div class="cabecalho">
-                <h3>Professores</h3>
-                <h3>Disciplinas</h3>
-                <h3>Equipamentos</h3>
+                <a href="#professores"><h3>Professores</h3></a> 
+                <a href="#disciplinas"><h3>Disciplinas</h3></a>
+                <a href="#equipamentos"><h3>Equipamentos</h3></a>
             </div>
 
         </div>
@@ -34,10 +34,11 @@
         </div>
 
         <div class="imgInicial">
-            <div class="img1" class="img1"></div>
-            <div class="img2" class="img2"></div>
-            <div class="img2" class="img3"></div>
-            <div class="img1" class="img4"></div>
+            <img class="img1" src="/img/fundos/1B.jpeg" alt="">
+            <img class="img2" src="/img/fundos/2H.jpeg" alt="">
+            <img class="img2" src="/img/fundos/3A.jpeg" alt="">
+            <img class="img1" src="/img/fundos/4B.jpeg" alt="">
+
         </div>
     </div>
 
@@ -52,23 +53,23 @@
             pelo campus possam se utilizar de suas instalações.</p>
 
         <div class="imgSobre">
-            <div class="img3" class="img5"></div>
-            <div class="img4" class="img6"></div>
-            <div class="img3" class="img7"></div>
+            <img class="img3" src="/img/fundos/1A.jpeg" alt="">
+            <img class="img4" src="/img/fundos/1B.jpeg" alt="">
+            <img class="img3" src="/img/fundos/1C.jpeg" alt="">
         </div>
     </div>
 
-    <div class="professores">
+    <div id="professores">
         <b>
             <h2>Professores</h2>
         </b>
-        <p>  A equipe é formada por professores da --------------. Atualmente contamos com dois professores e <br> um
+        <p class="p">  A equipe é formada por professores da --------------. Atualmente contamos com dois professores e um
             coordenador de curso.</p>
 
         <div class="cardProf">
 
             <div class="caixaProf">
-                <div class="foto1"> </div>
+                <img class="foto" src="/img/profs/lontra.jpg" alt="">
 
                 <div class="infoProfs">
                     <b>
@@ -81,7 +82,8 @@
             </div>
 
             <div class="caixaProf">
-                <div class="foto2"> </div>
+                <img class="foto" src="/img/profs/5.jpeg" alt="">
+
                 <div class="infoProfs">
                     <b>
                         <p>Coordenador</p>
@@ -92,7 +94,7 @@
             </div>
 
             <div class="caixaProf">
-                <div class="foto3"> </div>
+                <img class="foto" src="/img/profs/6.jpeg" alt="">
                 <div class="infoProfs">
 
                     <b>
@@ -105,7 +107,7 @@
         </div>
     </div>
 
-    <div class="disciplinas">
+    <div id="disciplinas">
         <h2>Disciplinas que utilizam o PHI Lab</h2>
 
         <div class="cursos">
@@ -263,7 +265,7 @@
         </div>
     </div>
 
-    <div class="equipamentos">
+    <div id="equipamentos">
         <h2>Equipamentos</h2>
 
         <div class="conteudoEquipamentos">
@@ -275,6 +277,7 @@
             </div>
 
             <div class="imgEquipamento">
+
                 <div class="slides">
 
                     <input type="radio" name="radio" id="radio1" checked>
@@ -294,7 +297,7 @@
                             <img src="img/bancadaCP/2C.jpeg" alt="">
                         </div>
                     </div>
-                    
+
                     <div class="slidBCH" style="display: none;">
                         <div class="slid first">
                             <img src="img/bancadaCH/3A.jpeg" alt="">
@@ -324,46 +327,46 @@
                     </div>
                 </div>
 
-            <div class="navigation">
-                <label class="bar" for="radio1"></label>
-                <label class="bar" for="radio2"></label>
-                <label class="bar" for="radio3"></label>
+                <div class="navigation">
+                    <label class="bar" for="radio1"></label>
+                    <label class="bar" for="radio2"></label>
+                    <label class="bar" for="radio3"></label>
+                </div>
+
             </div>
 
+            <div class="infoBCP">
+                <h2>Bancadas de Circuitos Pneumáticos</h2>
+                <p>  O PHI Lab conta com 3 bancadas duplas para montagem circuitos pneumáticos e eletropneumáticos, as
+                    quais podem proporcionar montagens de experimentos para até 6 grupos simultaneamente. Cada bancada
+                    conta com um gaveteiro contendo uma série de componentes pneumáticos e eletropneumáticos, de modo a
+                    mantê-los organizados e corretamente armazenados.</p>
+            </div>
+
+            <div class="infoBCH" style="display: none;">
+                <h2>Bancadas de Circuitos Hidraulicos</h2>
+                <p>  O PHI Lab conta com 1 bancada dupla para montagem circuitos hidráulicos e eletrohidráulicos,
+                    bancada esta que pode proporcionar montagens de experimentos para até 2 grupos simultaneamente. A
+                    bancada conta com dois gaveteiros contendo uma série de componentes hidráulicos e eletrohidráulicos,
+                    de modo a mantê-los organizados e corretamente armazenados.</p>
+            </div>
+
+            <div class="infoBMF" style="display: none;">
+                <h2>Bancadas de Mecanica dos Fluidos</h2>
+                <p>  O PHI Lab conta com 1 bancada dupla para montagem de experimentos de mecânicas dos fluidos e
+                    máquinas de fluxo, bancada esta que pode proporcionar montagens de experimentos para até 2 grupos
+                    simultaneamente. A bancada conta com aparatos que podem proporcionar, entre outros experimentos, o
+                    número de Reynolds, perda de carga distribuída, perda de carga localizada, medição de velocidade de
+                    escoamento através de Medidor Venturi e associação de bombas centrífugas.</p>
+            </div>
         </div>
 
-        <div class="infoBCP">
-            <h2>Bancadas de Circuitos Pneumáticos</h2>
-            <p>  O PHI Lab conta com 3 bancadas duplas para montagem circuitos pneumáticos e eletropneumáticos, as
-                quais podem proporcionar montagens de experimentos para até 6 grupos simultaneamente. Cada bancada
-                conta com um gaveteiro contendo uma série de componentes pneumáticos e eletropneumáticos, de modo a
-                mantê-los organizados e corretamente armazenados.</p>
+        <div class="footer">
+            <p id="produzido">Produzido por</p>
+            <p>Fabrica de Software</p>
+            <img src="/img/fundos/logo-claro.webp" alt="">
+
         </div>
-
-        <div class="infoBCH" style="display: none;">
-            <h2>Bancadas de Circuitos Hidraulicos</h2>
-            <p>  O PHI Lab conta com 1 bancada dupla para montagem circuitos hidráulicos e eletrohidráulicos,
-                bancada esta que pode proporcionar montagens de experimentos para até 2 grupos simultaneamente. A
-                bancada conta com dois gaveteiros contendo uma série de componentes hidráulicos e eletrohidráulicos,
-                de modo a mantê-los organizados e corretamente armazenados.</p>
-        </div>
-
-        <div class="infoBMF" style="display: none;">
-            <h2>Bancadas de Mecanica dos Fluidos</h2>
-            <p>  O PHI Lab conta com 1 bancada dupla para montagem de experimentos de mecânicas dos fluidos e
-                máquinas de fluxo, bancada esta que pode proporcionar montagens de experimentos para até 2 grupos
-                simultaneamente. A bancada conta com aparatos que podem proporcionar, entre outros experimentos, o
-                número de Reynolds, perda de carga distribuída, perda de carga localizada, medição de velocidade de
-                escoamento através de Medidor Venturi e associação de bombas centrífugas.</p>
-        </div>
-    </div>
-
-    <div class="footer">
-        <p id="produzido">Produzido por</p>
-        <p>Fabrica de Software</p>
-        <img src="/img/fundos/logo-claro.webp" alt="">
-
-    </div>
 
 </body>
 
