@@ -9,7 +9,7 @@ body {
     overflow-x: hidden;
 }
 
-.cabecalho a {
+.header a {
     text-decoration: none;
     color: inherit;
 }
@@ -86,7 +86,7 @@ h2 {
     font-size: 2.1rem;
 }
 
-.sobre {
+#sobre {
     margin-top: 10vh;
     text-align: center;
     display: flex;
@@ -99,7 +99,7 @@ p {
     line-height: 5.1vh;
 }
 
-.sobre p {
+#sobre p {
     width: 75vw;
     text-align: justify;
 }
@@ -281,6 +281,7 @@ li p {
 .imgEquipamento, .slidBCP, .slidBCH, .slidBMF {
     width: 25vw;
     height: 67vh;
+    border-radius: 10px;
     overflow: hidden;
 }
 
