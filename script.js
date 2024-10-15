@@ -13,7 +13,7 @@ function bcp() {
 
     document.querySelector(".slidBCP").style.display = "flex";
     document.querySelector(".slidBCH").style.display = "none";
-    document.querySelector(".sldBMF").style.display = "none";
+    document.querySelector(".slidBMF").style.display = "none";
 }
 
 function bch() {
