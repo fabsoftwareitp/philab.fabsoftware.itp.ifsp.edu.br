@@ -387,6 +387,24 @@ li details summary {
     color: #13355e;
 }
 
+@media (width <= 1000px) {
+    .cabecalho {
+        width: 40vw;
+    }
+
+    .opcoes button {
+        padding: 3vh;
+    }
+
+    .infoBCP, .infoBCH, .infoBMF {
+        width: 40vw;
+    }
+
+    .conteudoEquipamentos {
+        width: 90vw;
+    }
+}
+
 @media (width <= 800px) {
 
     html {
@@ -440,9 +458,6 @@ li details summary {
 
     .nome {
         line-height: 4vh;
-    }
-
-    .foto {
     }
 
     .cardProf {
@@ -547,6 +562,60 @@ li details summary {
     }
 }
 
+@media (width <= 760px) {
+    #equipamentos {
+        margin-top: 3vh;
+    }
+
+    .opcoes, .opcoes button {
+        height: 8vh;
+    }
+
+    .conteudoEquipamentos {
+        height: 170vh;
+        align-content: center;
+        justify-content: space-around;  
+    }
+
+    .infoBCP, .infoBCH, .infoBMF {
+        width: 55vw;
+    }
+
+    .container {
+        height: 150vh;
+        flex-direction: column-reverse;
+        justify-content: space-around;
+    }
+
+    .imgEquipamento {
+        width: 45vw;
+    }
+
+    .slid {
+        width: 45vw;
+    }
+
+    .slid img {
+        width: 45vw;
+    }
+    
+    #radio1:checked ~ .slidBCP .first,  #radio1:checked ~ .slidBMF .first #radio1:checked ~ .slidBCH .first {
+        margin-left: 0vw;
+    }
+    
+    #radio2:checked ~ .slidBCP .first, #radio2:checked ~ .slidBMF .first, #radio2:checked ~ .slidBCH .first {
+        margin-left: -45vw;
+    }
+    
+    #radio3:checked ~ .slidBCP .first, #radio3:checked ~ .slidBMF .first, #radio3:checked ~ .slidBCH .first {
+        margin-left: -90vw;
+    }
+
+    .container h2 {
+        text-align: center;
+    }
+}
+
 @media (width <= 600px) {
     html {
         font-size: 10px;
@@ -617,7 +686,6 @@ li details summary {
     }
 
     .caixaProf {
-        border: solid 2px;
         width: 50vw;
         height: 25vh;
         align-items: center;
@@ -636,61 +704,93 @@ li details summary {
         line-height: 5vh;
     }
 
-    #equipamentos {
-        margin-top: 3vh;
-    }
+}
 
-    .opcoes, .opcoes button {
-        height: 8vh;
-    }
-
-    .conteudoEquipamentos {
-        height: 140vh;
-        align-content: center;
-        justify-content: space-around;  
-    }
-
-    .infoBCP, .infoBCH, .infoBMF {
-        width: 55vw;
-    }
-
-    .container {
-        height: 120vh;
-        flex-direction: column-reverse;
-        justify-content: space-around;
-    }
-
-    .imgEquipamento {
-        width: 45vw;
-    }
-
-    .slid {
-        width: 45vw;
-    }
-
-    .slid img {
-        width: 45vw;
-    }
-    
-    #radio1:checked ~ .slidBCP .first,  #radio1:checked ~ .slidBMF .first #radio1:checked ~ .slidBCH .first {
-        margin-left: 0vw;
-    }
-    
-    #radio2:checked ~ .slidBCP .first, #radio2:checked ~ .slidBMF .first, #radio2:checked ~ .slidBCH .first {
-        margin-left: -45vw;
-    }
-    
-    #radio3:checked ~ .slidBCP .first, #radio3:checked ~ .slidBMF .first, #radio3:checked ~ .slidBCH .first {
-        margin-left: -90vw;
-    }
-
-    .container h2 {
-        text-align: center;
+@media (width <= 480px) {
+    .cabecalho {
+        display: none;
     }
 }
 
-@media (width <= 500px) {
+@media (width <= 450px) {
+    .img1, .img2 {
+        display: none;
+    }
+
+    .paginaInicial {
+        height: 50vh;
+    }
+
+    .paginaInicial h1 {
+        width: 70vw;
+    }
+
+    .imgEquipamento {
+        width: 60vw;
+        height: 95vw;
+    }
+
+    .slid {
+        width: 60vw;
+        height: 95vw;
+    }
+
+    .slid img {
+        width: 60vw;
+        height: 95vw;
+    }
+
+    .infoBCP, .infoBCH, .infoBMF {
+        width: 60vw;
+    }
+
     .cabecalho {
-        width: 50vw;
+        display: none;
+    }
+}
+
+@media (width <= 400px) {
+    .imgSobre {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 130vw;
+    }
+
+    .img3, .img4 {
+        margin: 0;
+        width: 40vw;
+        height: 40vw;
+    }
+
+    .opcoes {
+        justify-content: center;
+        width: 100vw;
+    }
+
+    .paginaInicial h1 {
+        width: 90vw;
+    }
+
+    .container {
+        height: 135vh;
+    }
+
+    .conteudoEquipamentos {
+        height: 150vh;
+    }
+
+    .caixaProf {
+        width: 60vw;
+    }
+
+    .foto {
+        width: 20vw;
+        height: 20vw;
+    }
+
+    #disciplinas h2 {
+        width: 80vw;
+        text-align: center;
     }
 }
