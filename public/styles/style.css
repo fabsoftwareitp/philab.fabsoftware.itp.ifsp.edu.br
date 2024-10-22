@@ -1,0 +1,696 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+body {
+    background-color: #F5F5F5;
+    font-family: "Open Sans", sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+    padding: 0;
+}
+
+header a {
+    text-decoration: none;
+    color: inherit;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.82rem;
+    height: 8.5vh;
+    box-shadow: 0vh 0.5vh 2vh rgba(0, 0, 0, 0.5);
+    position: relative; 
+    z-index: 1;
+}
+
+.paginaInicial {
+    background-color: blue;
+    height: 83vh;
+    display: flex;
+    background-image: url(/fundos/fundoInicial.png);
+    background-size: cover;
+    justify-content: space-around;
+    align-items: center;
+}
+
+h1 {
+    color: white;
+    font-size: 2.3rem;
+    width: 35vw;
+}
+
+h4 {
+    color: white;
+    font-size: 1.2rem; 
+}
+
+.img1 {
+    height: 21vh;
+    width: 19vw;
+    background-color: antiquewhite;
+    border-radius: 2.8vh;
+    object-fit: cover;
+}
+
+.img2 {
+    height: 21vh;
+    width: 10vw;
+    background-color: orange;
+    border-radius: 2.8vh;
+    object-fit: cover;
+}
+
+.imgInicial {
+    display: flex;
+    width: 30vw;
+    height: 46vh;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+.cabecalho {
+    width: 27vw;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 3vw;
+}
+
+#phiHeader {
+    margin-left: 3vw;
+}
+
+h2 {
+    color: #255FA0;
+    font-size: 2.1rem;
+}
+
+#sobre {
+    margin-top: 10vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+p {
+    font-size: 1.25rem;
+    line-height: 5.1vh;
+}
+
+#sobre p {
+    width: 75vw;
+    text-align: justify;
+}
+
+.imgSobre {
+    display: flex;
+    width: 50vw;
+    justify-content: space-around;
+    margin-top: 8vh;
+    height: 35vh;
+}
+
+.img4 {
+    background-color: lightblue;
+    width: 16vw;
+    height: 28.5vh;
+    border-radius: 2.8vh;
+    box-shadow: 0vh 1vh 1vh #00000067;
+}
+
+.img3 {
+    margin-top: 8vh;
+    background-color: lightblue;
+    width: 15vw;
+    height: 26vh;
+    border-radius: 2.8vh;
+    box-shadow: 0vh 1vh 1vh #00000067;
+}
+
+.nome {
+    font-size: 0.95rem;
+    line-height: 2.7vh;
+}
+
+.caixaProf p {
+    margin: 1vh 0 2vh 0;
+}
+
+.caixaProf {
+    background-color: #D9D9D9;
+    display: flex;
+    align-items: center;
+    border-radius: 2.8vh;
+    width: 26.5vw;
+    height: 26vh;
+}
+
+.foto {
+    width: 7vw;
+    height: 7vw;
+    border-radius: 50vw;
+    margin-right: 1vw;
+    margin-left: 1.5vw;
+    object-fit: cover;
+}
+
+.caixaProf button {
+    border: none;
+    background-color: #1C3C61;
+    font-size: 0.9rem;
+    width: 10vw;
+    height: 5vh;
+    border-radius: 2.8vh;
+    color: #F5F5F5;
+    margin-top: 1vh;
+    cursor: pointer;
+}
+
+.cardProf {
+    display: flex;
+    width: 58vw;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+    height: 61vh;
+    margin-top: 8vh;
+}
+
+.infoProfs {
+    width: 15vw;
+    padding-bottom: 2vh;
+
+}
+
+#professores {
+    margin-top: 12vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#professores .p {
+    width: 75vw;
+}
+
+.conteudoEquipamentos {
+    display: flex;
+    justify-content: space-between;  
+    width: 80vw;
+    height: 85vh;
+    align-items: center;
+}
+
+.opcoes button {
+    font-size: 1.3rem;
+    padding-top: 5vh;
+    padding-bottom: 7vh;
+    width: 18vw;
+    text-align: justify;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    width: 70vw;
+    justify-content: space-around;  
+
+}
+
+.opcoes {
+    width: 20vw;
+    height: 50vh;
+}
+
+#bch {
+    border-top: solid 0.4vh #1C3C61;
+    border-bottom: solid 0.4vh #1C3C61;
+}
+
+#bcp {font-weight: bold; color:#1C3C61; padding-top: 0;}
+
+.infoBCP, .infoBCH, .infoBMF {
+    width: 29vw;
+    text-align: justify;
+}
+
+.infoBCP h2, .infoBCH h2, .infoBMF h2 {
+    font-size: 1.5rem;
+    margin-top: 0;
+}
+
+#equipamentos, #disciplinas {
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cursos {
+    margin-top: 2vh;
+}
+
+summary {
+    color: #1F1F1F;
+    font-size: 1.6rem;
+    line-height: 7.5vh;
+    font-weight: bold;
+    cursor: pointer; 
+}
+
+ul summary {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+ul p, ul a {
+    text-align: justify;
+    line-height: 4vh;
+    font-size: 1rem;
+    width: 50vw;
+    margin: 0 0 0 4vw;
+}
+ 
+ul {list-style-type: none}
+
+li p {
+    display: flex;
+    align-items: center;
+}
+
+.imgEquipamento, .slidBCP, .slidBCH, .slidBMF {
+    width: 25vw;
+    height: 67vh;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.slides, .slidBCP {
+    display: flex;
+    width: 300vw;
+}
+
+.slidBCH, .slidBMF {
+    width: 300vw;
+}
+
+.navigation {
+    position: relative;
+    display: flex;
+    bottom: 3vh;
+    left: 10.5vw;
+}
+
+.bar {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 5px;
+    border: 2px white solid;
+    background-color: rgb(116, 9, 9);
+    cursor: pointer;
+}
+
+.bar:hover {
+    background-color: #D9D9D9;
+    border: 2px #D9D9D9 solid;
+}
+
+input {
+    display: none;
+}
+
+.slid {
+    width: 25vw;
+    transition: .5s;
+}
+
+.slid img {
+    width: 25vw;
+    height: 67vh;
+}
+
+#radio1:checked ~ .slidBCP .first,  #radio1:checked ~ .slidBMF .first #radio1:checked ~ .slidBCH .first {
+    margin-left: 0;
+}
+
+#radio2:checked ~ .slidBCP .first, #radio2:checked ~ .slidBMF .first, #radio2:checked ~ .slidBCH .first {
+    margin-left: -25vw;
+}
+
+#radio3:checked ~ .slidBCP .first, #radio3:checked ~ .slidBMF .first, #radio3:checked ~ .slidBCH .first {
+    margin-left: -50vw;
+}
+
+footer {
+    background-color: #0b2542;
+    display: flex;
+    align-items: center;
+    height: 25vh;
+    justify-content: center;
+    margin-top: 10vh;
+}
+
+.fabrica {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fabrica img {
+    width: 3vw;
+    margin: 0;
+}
+
+.if img {
+    height: 18vh;
+}
+
+#produzido {
+    color:orangered;
+}
+
+footer p {
+    color: white;
+    margin: 0;
+    padding: 0;
+    font-size: 1.2rem;
+}
+
+li details summary {
+    color: #13355e;
+}
+
+@media (width <= 800px) {
+
+    html {
+        font-size: 14px;
+    }
+
+    .img1 {
+        height: 16vh;
+        width: 23vw;
+    }
+    
+    .img2 {
+        height: 16vh;
+        width: 14vw;
+    }
+
+    h1 {
+        width: 38vw;
+    }
+
+    .imgInicial {
+        height: 35vh;
+        width: 38vw;
+    }
+
+    .cabecalho {
+        width: 40vw;
+    }
+
+    .img4 {
+        width: 23vw;
+        height: 25vh;
+    }
+    
+    .img3 {
+        width: 23vw;
+        height: 25vh;
+    }
+
+    .imgSobre {
+        width: 73vw;
+    }
+
+    .paginaInicial {
+        height: 80vh;
+    }
+
+    header {
+        height: 8vh;
+    }
+
+    .nome {
+        line-height: 4vh;
+    }
+
+    .foto {
+    }
+
+    .cardProf {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+        height: 110vh;
+
+    }
+
+    .caixaProf {
+        width: 48vw;
+        height: 30vh;
+        align-items: center;
+
+    }
+
+    .infoProfs p{
+        font-size: 1.2rem;
+    }
+
+    .infoProfs {
+        width: 28vw;
+    }
+
+    .foto {
+        width: 15vw;
+        height: 15vw;
+    }
+
+    .infoProfs button {
+        width: 15vw;
+        height: 4vh;
+    }
+
+    .cursos {
+        width: 80vw;
+    }
+
+    ul p, ul a {
+        width: 70vw;
+    }
+
+    .conteudoEquipamentos {
+        flex-direction: column;
+        width: 90vw;
+        height: 115vh;
+    }
+
+    .container {
+        display: flex;
+        width: 85vw;
+        height: 92vh;
+        justify-content: space-between;
+    }
+
+    .opcoes {
+        display: flex;
+        width: 70vw;
+        align-items: center;
+        height: 18vh;
+    }
+
+    .opcoes button {
+        height: 15vh;
+        width: 26.66vw;
+        padding: 0 3vw 0 3vw;
+    }
+
+    #bch {
+        border: none;
+        border-left: solid 0.6vw #1C3C61;
+        border-right: solid 0.6vw #1C3C61;
+    }
+
+    .imgEquipamento {
+        width: 40vw;
+    }
+
+    .slid {
+        width: 40vw;
+    }
+
+    .slid img {
+        width: 40vw;
+    }
+    
+    #radio1:checked ~ .slidBCP .first,  #radio1:checked ~ .slidBMF .first #radio1:checked ~ .slidBCH .first {
+        margin-left: 0vw;
+    }
+    
+    #radio2:checked ~ .slidBCP .first, #radio2:checked ~ .slidBMF .first, #radio2:checked ~ .slidBCH .first {
+        margin-left: -40vw;
+    }
+    
+    #radio3:checked ~ .slidBCP .first, #radio3:checked ~ .slidBMF .first, #radio3:checked ~ .slidBCH .first {
+        margin-left: -80vw;
+    }
+
+    .infoBCP, .infoBCH, .infoBMF {
+        width: 40vw;
+    }
+}
+
+@media (width <= 600px) {
+    html {
+        font-size: 10px;
+    }
+
+    .paginaInicial {
+        height: 70vh;
+    }
+
+    h1 {
+        width: 48vw;
+    }
+
+    .img1 {
+        width: 22vw;
+        height: 15vh;
+    }
+
+    .img2 {
+        width: 16vw;
+        height: 15vh;
+    }
+
+    .imgInicial {
+        height: 33vh;
+        width: 40vw;
+    }
+
+    header {
+        height: 6vh;
+    }
+
+    .cabecalho {
+        width: 36vw;
+    }
+
+    .img4 {
+        width: 22vw;
+        height: 18vh;
+    }
+    
+    .img3 {
+        width: 22vw;
+        height: 18vh;
+    }
+
+    .imgSobre {
+        width: 70vw;
+        height: auto;
+        margin-top: 2vh;
+    }
+
+    p {
+        line-height: 4vh;
+    }
+
+    #professores {
+        margin-top: 5vh;
+    }
+
+    .cardProf {
+        height: 90vh;
+        margin-top: 1.5vh;
+    }
+
+    .nome {
+        line-height: 2.5vh;
+    }
+
+    .caixaProf {
+        border: solid 2px;
+        width: 50vw;
+        height: 25vh;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .infoProfs {
+        width: 30vw;
+    }
+
+    ul p, ul a {
+        line-height: 2vh;
+    }
+
+    summary {
+        line-height: 5vh;
+    }
+
+    #equipamentos {
+        margin-top: 3vh;
+    }
+
+    .opcoes, .opcoes button {
+        height: 8vh;
+    }
+
+    .conteudoEquipamentos {
+        height: 140vh;
+        align-content: center;
+        justify-content: space-around;  
+    }
+
+    .infoBCP, .infoBCH, .infoBMF {
+        width: 55vw;
+    }
+
+    .container {
+        height: 120vh;
+        flex-direction: column-reverse;
+        justify-content: space-around;
+    }
+
+    .imgEquipamento {
+        width: 45vw;
+    }
+
+    .slid {
+        width: 45vw;
+    }
+
+    .slid img {
+        width: 45vw;
+    }
+    
+    #radio1:checked ~ .slidBCP .first,  #radio1:checked ~ .slidBMF .first #radio1:checked ~ .slidBCH .first {
+        margin-left: 0vw;
+    }
+    
+    #radio2:checked ~ .slidBCP .first, #radio2:checked ~ .slidBMF .first, #radio2:checked ~ .slidBCH .first {
+        margin-left: -45vw;
+    }
+    
+    #radio3:checked ~ .slidBCP .first, #radio3:checked ~ .slidBMF .first, #radio3:checked ~ .slidBCH .first {
+        margin-left: -90vw;
+    }
+
+    .container h2 {
+        text-align: center;
+    }
+}
+
+@media (width <= 500px) {
+    .cabecalho {
+        width: 50vw;
+    }
+}
