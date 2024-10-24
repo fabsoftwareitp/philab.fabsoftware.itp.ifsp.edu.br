@@ -733,8 +733,9 @@ li details summary {
         height: 50vh;
     }
 
-    .paginaInicial h1 {
+    .paginaInicial h1, .paginaInicial h4 {
         width: 70vw;
+        margin-left: 5vw;
     }
 
     .imgEquipamento {
