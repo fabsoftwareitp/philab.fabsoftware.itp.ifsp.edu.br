@@ -1,11 +1,15 @@
 {
   "dependencies": {
-    "astro": "^4.16.7"
+    "astro": "^4.16.7",
+    "tinacms": "^2.3.0"
   },
   "scripts": {
-    "dev": "astro dev",
+    "dev": "tinacms dev -c \"astro dev\"",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview"
+  },
+  "devDependencies": {
+    "@tinacms/cli": "^1.6.10"
   }
 }

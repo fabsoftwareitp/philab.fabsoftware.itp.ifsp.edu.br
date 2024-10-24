@@ -1,0 +1,11 @@
+---
+const allPosts = await Astro.glob('/content/posts/*.md');
+    
+---
+<html>
+    <head></head>
+    <body>
+        <h1>Teste</h1>
+        {allPosts.map((post) => <h1>{post.frontmatter.title}</h1><p>{post.rawContent}</p><br></br>)}
+    </body>
+</html>
