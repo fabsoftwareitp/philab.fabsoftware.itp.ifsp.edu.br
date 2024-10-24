@@ -220,7 +220,6 @@ p {
     align-items: center;
     width: 70vw;
     justify-content: space-around;  
-
 }
 
 .opcoes {
@@ -353,31 +352,40 @@ footer {
     display: flex;
     align-items: center;
     height: 25vh;
-    justify-content: center;
+    justify-content:center;
     margin-top: 10vh;
 }
 
-.fabrica {
+.logofabrica {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: space-between;
+    width: 13vw;
 }
 
-.fabrica img {
-    width: 3vw;
+.logofabrica p {
+    width: 8vw;
+}
+.logofabrica img {
+    width: 4vw;
     margin: 0;
 }
 
 .if img {
-    height: 18vh;
+    padding-top: 19px;
+    width: 15vw;
 }
 
-#produzido {
-    color:orangered;
+.logofabrica p {
+    color: white;
+    line-height: 22px;
+}
+
+#produzido{
+    text-align: center;
+    color: orangered;
 }
 
 footer p {
-    color: white;
     margin: 0;
     padding: 0;
     font-size: 1.2rem;
@@ -504,13 +512,13 @@ li details summary {
     .conteudoEquipamentos {
         flex-direction: column;
         width: 90vw;
-        height: 115vh;
+        height: auto;
     }
 
     .container {
         display: flex;
         width: 85vw;
-        height: 92vh;
+        height: auto;
         justify-content: space-between;
     }
 
@@ -572,31 +580,31 @@ li details summary {
     }
 
     .conteudoEquipamentos {
-        height: 170vh;
+        height: auto;
         align-content: center;
         justify-content: space-around;  
     }
 
     .infoBCP, .infoBCH, .infoBMF {
-        width: 55vw;
+        width: 70vw;
     }
 
     .container {
-        height: 150vh;
+        margin-top: 50px;
         flex-direction: column-reverse;
         justify-content: space-around;
     }
 
     .imgEquipamento {
-        width: 45vw;
+        width: 65vw;
     }
 
     .slid {
-        width: 45vw;
+        width: 65vw;
     }
 
     .slid img {
-        width: 45vw;
+        width: 65vw;
     }
     
     #radio1:checked ~ .slidBCP .first,  #radio1:checked ~ .slidBMF .first #radio1:checked ~ .slidBCH .first {
@@ -604,11 +612,11 @@ li details summary {
     }
     
     #radio2:checked ~ .slidBCP .first, #radio2:checked ~ .slidBMF .first, #radio2:checked ~ .slidBCH .first {
-        margin-left: -45vw;
+        margin-left: -65vw;
     }
     
     #radio3:checked ~ .slidBCP .first, #radio3:checked ~ .slidBMF .first, #radio3:checked ~ .slidBCH .first {
-        margin-left: -90vw;
+        margin-left: -130vw;
     }
 
     .container h2 {
@@ -704,6 +712,10 @@ li details summary {
         line-height: 5vh;
     }
 
+    .conteudoEquipamentos {
+        height: auto;
+    }
+
 }
 
 @media (width <= 480px) {
@@ -772,12 +784,8 @@ li details summary {
         width: 90vw;
     }
 
-    .container {
-        height: 135vh;
-    }
-
     .conteudoEquipamentos {
-        height: 150vh;
+        height: auto;
     }
 
     .caixaProf {
