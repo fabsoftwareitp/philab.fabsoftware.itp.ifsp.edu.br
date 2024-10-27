@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -7,8 +7,6 @@
     <title>PHI Lab</title>
 
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"> </script>
-
 </head>
 
 <body>
@@ -19,18 +17,23 @@
                 <h3 id="phiHeader">PHI Lab</h3>
             </a>
 
-            <div class="cabecalho">
-                <a href="#professores">
-                    <h3>Professores</h3>
-                </a>
-                <a href="#disciplinas">
-                    <h3>Disciplinas</h3>
-                </a>
-                <a href="#equipamentos">
-                    <h3>Equipamentos</h3>
-                </a>
+            <div id="menu">
+
+                <div id="menuBTN">
+                    <ul>
+                        <li id="hamb1"></li>
+                        <li id="hamb2"></li>
+                        <li id="hamb3"></li>
+                    </ul>
+                </div>
+
+                <ul id="nav">
+                    <li><a href="#professores">Professores</a></li>
+                    <li><a href="#disciplinas">Disciplinas</a></li>
+                    <li><a href="#equipamentos">Equipamentos</a></li>
+                </ul>
             </div>
-            
+
         </header>
     </b>
 
@@ -385,11 +388,7 @@
     <footer>
 
         <div class="fabrica">
-            <p id="produzido">Produzido por</p>
-            <div class="logofabrica">
-                <img src="/img/fundos/logo-claro.webp" alt="">
-                <p>Fabrica de Software</p>
-            </div>
+            <img src="/img/fundos/fabrica.png" alt="">
         </div>
 
         <div class="if">
@@ -397,6 +396,8 @@
         </div>
 
     </footer>
+
+    <script src="script.js"> </script>
 
 </body>
 

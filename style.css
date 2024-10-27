@@ -49,7 +49,7 @@ h4 {
     height: 21vh;
     width: 19vw;
     background-color: antiquewhite;
-    border-radius: 2.8vh;
+    border-radius: 12px;
     object-fit: cover;
 }
 
@@ -57,7 +57,7 @@ h4 {
     height: 21vh;
     width: 10vw;
     background-color: orange;
-    border-radius: 2.8vh;
+    border-radius: 12px;
     object-fit: cover;
 }
 
@@ -70,11 +70,25 @@ h4 {
 
 }
 
-.cabecalho {
-    width: 27vw;
+#nav {
+    width: 50vw;
     display: flex;
-    justify-content: space-between;
-    margin-right: 3vw;
+    justify-content: flex-end;
+    margin-right: 10px;
+}
+
+#nav a {
+    font-size: 0.95rem;
+    margin: 20px;
+}
+
+#menuBTN {
+    display: none;
+
+}
+
+header a:hover {
+    text-shadow: 0 0 7px #0b254259;
 }
 
 #phiHeader {
@@ -116,7 +130,7 @@ p {
     background-color: lightblue;
     width: 16vw;
     height: 28.5vh;
-    border-radius: 2.8vh;
+    border-radius: 12px;
     box-shadow: 0vh 1vh 1vh #00000067;
 }
 
@@ -125,7 +139,7 @@ p {
     background-color: lightblue;
     width: 15vw;
     height: 26vh;
-    border-radius: 2.8vh;
+    border-radius: 12px;
     box-shadow: 0vh 1vh 1vh #00000067;
 }
 
@@ -142,7 +156,7 @@ p {
     background-color: #D9D9D9;
     display: flex;
     align-items: center;
-    border-radius: 2.8vh;
+    border-radius: 12px;
     width: 26.5vw;
     height: 26vh;
 }
@@ -162,10 +176,15 @@ p {
     font-size: 0.9rem;
     width: 10vw;
     height: 5vh;
-    border-radius: 2.8vh;
+    border-radius: 17px;
     color: #F5F5F5;
     margin-top: 1vh;
     cursor: pointer;
+    transition: 0.5s;
+}
+
+.caixaProf button:hover {
+    background-color: #0b2542;
 }
 
 .cardProf {
@@ -204,11 +223,11 @@ p {
     align-items: center;
 }
 
-.opcoes button {
+.opcoes button {    
     font-size: 1.3rem;
     padding-top: 5vh;
     padding-bottom: 7vh;
-    width: 18vw;
+    width: 20vw;
     text-align: justify;
     background: none;
     border: none;
@@ -268,7 +287,7 @@ ul summary {
     font-weight: bold;
 }
 
-ul p, ul a {
+details ul p, details ul a {
     text-align: justify;
     line-height: 4vh;
     font-size: 1rem;
@@ -300,10 +319,12 @@ li p {
 }
 
 .navigation {
+    width: 74px;
     position: relative;
     display: flex;
-    bottom: 3vh;
-    left: 10.5vw;
+    bottom: 7%;
+    left: 50%;
+    transform: translate(-50%);
 }
 
 .bar {
@@ -312,7 +333,7 @@ li p {
     border-radius: 50%;
     margin: 5px;
     border: 2px white solid;
-    background-color: rgb(116, 9, 9);
+    background-color: white;
     cursor: pointer;
 }
 
@@ -356,39 +377,8 @@ footer {
     margin-top: 10vh;
 }
 
-.logofabrica {
-    display: flex;
-    justify-content: space-between;
-    width: 13vw;
-}
-
-.logofabrica p {
-    width: 8vw;
-}
-.logofabrica img {
-    width: 4vw;
-    margin: 0;
-}
-
-.if img {
-    padding-top: 19px;
-    width: 15vw;
-}
-
-.logofabrica p {
-    color: white;
-    line-height: 22px;
-}
-
-#produzido{
-    text-align: center;
-    color: orangered;
-}
-
-footer p {
-    margin: 0;
-    padding: 0;
-    font-size: 1.2rem;
+.if img, .fabrica img {
+    width: 150px;
 }
 
 li details summary {
@@ -396,10 +386,6 @@ li details summary {
 }
 
 @media (width <= 1000px) {
-    .cabecalho {
-        width: 40vw;
-    }
-
     .opcoes button {
         padding: 3vh;
     }
@@ -436,10 +422,6 @@ li details summary {
     .imgInicial {
         height: 35vh;
         width: 38vw;
-    }
-
-    .cabecalho {
-        width: 40vw;
     }
 
     .img4 {
@@ -505,7 +487,7 @@ li details summary {
         width: 80vw;
     }
 
-    ul p, ul a {
+    details ul p, details ul a {
         width: 70vw;
     }
 
@@ -653,11 +635,7 @@ li details summary {
     }
 
     header {
-        height: 6vh;
-    }
-
-    .cabecalho {
-        width: 36vw;
+        height: auto;
     }
 
     .img4 {
@@ -704,7 +682,7 @@ li details summary {
         width: 30vw;
     }
 
-    ul p, ul a {
+    details ul p, details ul a {
         line-height: 2vh;
     }
 
@@ -718,15 +696,70 @@ li details summary {
 
 }
 
-@media (width <= 480px) {
-    .cabecalho {
-        display: none;
-    }
-}
-
 @media (width <= 450px) {
     .img1, .img2 {
         display: none;
+    }
+
+    #menuBTN {
+        display: block;
+        margin-right: 10px;
+    }
+
+    #menuBTN ul li {
+        cursor: pointer;
+        width: 20px;
+        height: 2px;
+        background-color: #0b2542;
+        margin: 3px;
+        position: relative;
+    }
+
+    #nav {
+        visibility: hidden; 
+        width: 91vw;  
+        z-index: 1;
+        flex-direction: column; 
+        position: absolute; 
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #F5F5F5;
+        align-items: center;
+        margin: 0;
+    }
+
+    #nav li {
+        margin: 10px;
+        border-bottom: 1px solid rgba(0, 0, 0, .05);
+        text-align: center;
+        width: 100px;
+    }
+
+    #menu.active #nav {
+        visibility: visible;
+        display: flex;
+        box-shadow: 0vh 1vh 1vh rgba(0, 0, 0, 0.356);
+    }
+
+    #menu.active #menuBTN #hamb2 {
+        background: transparent;
+    }
+
+    #menu.active #menuBTN #hamb1 {
+        transform: rotate(135deg);
+        top: 4.75px;
+        transition: .5s;
+    }
+
+    #menu.active #menuBTN #hamb3 {
+        transform: rotate(-135deg);
+        top: -4.75px;
+        transition: .5s;
+    }
+
+    #menu #menuBTN #hamb3, #menu #menuBTN #hamb1 {
+        transform: rotate(0deg);
+        transition: .5s;
     }
 
     .paginaInicial {
@@ -756,10 +789,6 @@ li details summary {
     .infoBCP, .infoBCH, .infoBMF {
         width: 60vw;
     }
-
-    .cabecalho {
-        display: none;
-    }
 }
 
 @media (width <= 400px) {
@@ -785,10 +814,6 @@ li details summary {
         width: 90vw;
     }
 
-    .conteudoEquipamentos {
-        height: auto;
-    }
-
     .caixaProf {
         width: 60vw;
     }
@@ -801,5 +826,15 @@ li details summary {
     #disciplinas h2 {
         width: 80vw;
         text-align: center;
+    }
+
+    .navigation {
+        bottom: 15%;
+    }
+}
+
+@media (width <= 360px) {
+    .navigation {
+        bottom: 25%;
     }
 }

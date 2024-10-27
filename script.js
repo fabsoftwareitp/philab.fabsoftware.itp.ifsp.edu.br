@@ -52,3 +52,14 @@ function bmf() {
     document.querySelector(".slidBCH").style.display = "none";
     document.querySelector(".slidBMF").style.display = "flex";
 }
+
+//menu 
+
+function menu() {
+    const menu =  document.getElementById('menu');
+
+    menu.classList.toggle('active');
+}
+const menuBTN = document.getElementById('menuBTN');
+menuBTN.addEventListener('click', menu);
+
