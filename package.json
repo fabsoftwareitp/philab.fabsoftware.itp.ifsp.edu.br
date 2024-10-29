@@ -3,15 +3,12 @@
   "version": "1.0.0",
   "main": "script.js",
   "scripts": {
-    "dev": "tinacms dev -c \"astro dev\"",
+    "dev": "npx tinacms dev -c \"astro dev\"",
     "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview"
+    "build": "npx tinacms build --local --skip-cloud-checks & sleep 4 && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
     "@tinacms/datalayer": "^1.3.6",
     "astro": "^4.16.7",
