@@ -63,3 +63,9 @@ function menu() {
 const menuBTN = document.getElementById('menuBTN');
 menuBTN.addEventListener('click', menu);
 
+document.querySelectorAll('.btnFlip').forEach(button => {
+    button.addEventListener('click', () => {
+        const flip = button.closest('.flip');
+        flip.classList.toggle('flipped');
+    });
+});

@@ -8,6 +8,40 @@ body {
     padding: 0;
 }
 
+.flip {
+    position: relative;
+    transition: transform 1s;
+}
+
+.caixaFront,
+.caixaEnd {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: visibility 0s .3s;
+    opacity: 1; 
+}
+
+.caixaEnd {
+    transform: rotateY(180deg);
+    visibility: hidden; 
+    opacity: 0; 
+}
+
+.flip.flipped {
+    transform: rotateY(180deg);
+}
+
+.flip.flipped .caixaEnd {
+    visibility: visible; /* Torna visível quando virado */
+    opacity: 1; /* Torna visível */
+}
+
+.flip.flipped .caixaFront {
+    visibility: hidden; /* Esconde a frente */
+    opacity: 0; /* Torna invisível */
+}
+
 header a {
     text-decoration: none;
     color: inherit;
@@ -238,7 +272,7 @@ p {
     display: flex;
     align-items: center;
     width: 70vw;
-    justify-content: space-around;  
+    justify-content: space-around; 
 }
 
 .opcoes {
@@ -322,7 +356,7 @@ li p {
     width: 74px;
     position: relative;
     display: flex;
-    bottom: 7%;
+    bottom: 25px;
     left: 50%;
     transform: translate(-50%);
 }
@@ -455,7 +489,6 @@ li details summary {
         flex-wrap: nowrap;
         align-items: center;
         height: 110vh;
-
     }
 
     .caixaProf {
@@ -523,18 +556,11 @@ li details summary {
         border-right: solid 0.6vw #1C3C61;
     }
 
-    .imgEquipamento {
+    .slid, .slid img,.imgEquipamento {
         width: 40vw;
+        height: auto;
     }
 
-    .slid {
-        width: 40vw;
-    }
-
-    .slid img {
-        width: 40vw;
-    }
-    
     #radio1:checked ~ .slidBCP .first,  #radio1:checked ~ .slidBMF .first #radio1:checked ~ .slidBCH .first {
         margin-left: 0vw;
     }
@@ -574,18 +600,10 @@ li details summary {
     .container {
         margin-top: 50px;
         flex-direction: column-reverse;
-        justify-content: space-around;
+        justify-content: none;
     }
 
-    .imgEquipamento {
-        width: 65vw;
-    }
-
-    .slid {
-        width: 65vw;
-    }
-
-    .slid img {
+    .imgEquipamento, .slid, .slid img {
         width: 65vw;
     }
     
@@ -771,19 +789,9 @@ li details summary {
         margin-left: 5vw;
     }
 
-    .imgEquipamento {
+    .imgEquipamento, .slid, .slid img {
         width: 60vw;
-        height: 95vw;
-    }
-
-    .slid {
-        width: 60vw;
-        height: 95vw;
-    }
-
-    .slid img {
-        width: 60vw;
-        height: 95vw;
+        height: 70vh;
     }
 
     .infoBCP, .infoBCH, .infoBMF {
@@ -826,15 +834,22 @@ li details summary {
     #disciplinas h2 {
         width: 80vw;
         text-align: center;
+    } 
+
+    .slid img {
+        width: 60vw;
+        height: auto;
     }
 
-    .navigation {
-        bottom: 15%;
+    .slid {
+        height: min-content;
     }
-}
 
-@media (width <= 360px) {
-    .navigation {
-        bottom: 25%;
+    .slidBCH, .slidBCP, .slidBMF, .slidBCH img, .slidBCP img, .slidBMF img {
+        height: auto;
+    }
+
+    .imgEquipamento {
+        height: auto;
     }
 }
