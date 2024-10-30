@@ -26,6 +26,10 @@ body {
     transform: rotateY(180deg);
     visibility: hidden; 
     opacity: 0; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 .flip.flipped {
@@ -234,7 +238,21 @@ p {
 .infoProfs {
     width: 15vw;
     padding-bottom: 2vh;
+}
 
+.caixaEnd p {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.caixaEnd .nome {
+    font-size: 1.2rem;
+}
+
+.caixaEnd a {
+    font-style: italic;
+    color: #0b2542;
+    color: inherit;
 }
 
 #professores {
@@ -431,6 +449,11 @@ li details summary {
     .conteudoEquipamentos {
         width: 90vw;
     }
+
+    .caixaEnd p, .caixaEnd .nome {
+        font-size: 0.8rem;
+    }
+    
 }
 
 @media (width <= 800px) {
@@ -496,6 +519,14 @@ li details summary {
         height: 30vh;
         align-items: center;
 
+    }
+
+    .caixaEnd p {
+        font-size: 1rem;
+    }
+    
+    .caixaEnd .nome {
+        font-size: 1.2rem;
     }
 
     .infoProfs p{
@@ -711,6 +742,14 @@ li details summary {
         width: 30vw;
     }
 
+    .caixaEnd p {
+        font-size: 1.3rem;
+    }
+    
+    .caixaEnd .nome {
+        font-size: 1.4rem;
+    }
+
     details ul p, details ul a {
         line-height: 2vh;
     }
@@ -797,6 +836,18 @@ li details summary {
 
     .paginaInicial {
         height: 50vh;
+    }
+
+    .caixaEnd p {
+        font-size: 1.2rem;
+    }
+    
+    .caixaEnd .nome {
+        font-size: 1.3rem;
+    }
+
+    .caixaEnd button {
+        width: 15vw;
     }
 
     .paginaInicial h1, .paginaInicial h4 {
