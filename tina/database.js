@@ -6,7 +6,7 @@ import { MongodbLevel } from 'mongodb-level'
 const branch = (process.env.GITHUB_BRANCH ||
   process.env.VERCEL_GIT_COMMIT_REF ||
   process.env.HEAD ||
-  "main")
+  "next")
 
 const isLocal =  process.env.TINA_PUBLIC_IS_LOCAL === 'true'
 
