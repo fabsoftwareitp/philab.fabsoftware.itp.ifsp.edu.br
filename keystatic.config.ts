@@ -6,8 +6,8 @@ export default config({
     kind: 'local',
     // kind: 'github',
     // repo: {
-    //   owner: REPO_OWNER,
-    //   name: REPO_NAME
+    //   owner: 'fabsoftwareitp',
+    //   name: 'philab.fabsoftware.itp.ifsp.edu.br' 
     // }  
   },
   collections: {
