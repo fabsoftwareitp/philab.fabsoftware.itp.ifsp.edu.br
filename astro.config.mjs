@@ -10,7 +10,6 @@ import node from '@astrojs/node';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react(), markdoc()],
   integrations: [react(), markdoc(), keystatic()],
   output: 'hybrid',
 
