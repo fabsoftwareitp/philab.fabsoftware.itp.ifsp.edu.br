@@ -1,10 +1,9 @@
 import { c as createComponent, r as renderTemplate, m as maybeRenderHead, b as addAttribute } from '../chunks/astro/server_BANiJAcv.mjs';
 import 'kleur/colors';
 import 'clsx';
-import { g as getCollection } from '../chunks/_astro_content_BGh2niKS.mjs';
+import { g as getCollection } from '../chunks/_astro_content_DAN-jREV.mjs';
 export { renderers } from '../renderers.mjs';
 
-const prerender = false;
 const $$Index = createComponent(async ($$result, $$props, $$slots) => {
   const posts = await getCollection("posts");
   return renderTemplate`${maybeRenderHead()}<ul> ${posts.map((post) => renderTemplate`<li> <a${addAttribute(`/posts/${post.slug}`, "href")}>${post.data.title}</a> </li>`)} </ul>`;
@@ -17,7 +16,6 @@ const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
   __proto__: null,
   default: $$Index,
   file: $$file,
-  prerender,
   url: $$url
 }, Symbol.toStringTag, { value: 'Module' }));
 

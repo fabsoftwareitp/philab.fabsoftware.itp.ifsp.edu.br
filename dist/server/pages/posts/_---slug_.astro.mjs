@@ -1,6 +1,6 @@
 import { c as createComponent, r as renderTemplate, m as maybeRenderHead, d as renderSlot, e as createAstro, a as renderComponent } from '../../chunks/astro/server_BANiJAcv.mjs';
 import 'kleur/colors';
-import { a as getEntry } from '../../chunks/_astro_content_BGh2niKS.mjs';
+import { a as getEntry } from '../../chunks/_astro_content_DAN-jREV.mjs';
 import 'clsx';
 export { renderers } from '../../renderers.mjs';
 
@@ -13,7 +13,6 @@ const $$MarkdownPostLayout = createComponent(($$result, $$props, $$slots) => {
 }, "/home/leo/tina/philab.fabsoftware.itp.ifsp.edu.br/src/layouts/MarkdownPostLayout.astro", void 0);
 
 const $$Astro = createAstro();
-const prerender = false;
 const $$ = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$;
@@ -30,7 +29,6 @@ const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
   __proto__: null,
   default: $$,
   file: $$file,
-  prerender,
   url: $$url
 }, Symbol.toStringTag, { value: 'Module' }));
 
