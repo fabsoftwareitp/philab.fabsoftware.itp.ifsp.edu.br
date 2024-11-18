@@ -1,5 +1,6 @@
 import { makeGenericAPIRouteHandler } from '@keystatic/core/api/generic';
 import { parseString } from 'set-cookie-parser';
+import { jsx } from 'react/jsx-runtime';
 import { config as config$1, collection, fields } from '@keystatic/core';
 export { renderers } from '../../../renderers.mjs';
 
@@ -103,9 +104,18 @@ const config = config$1({
       format: { contentField: "content" },
       schema: {
         title: fields.slug({ name: { label: "Title" } }),
-        content: fields.markdoc({ label: "Content" })
+        content: fields.markdoc({ label: "Content", extension: "md" })
       }
     })
+  },
+  ui: {
+    brand: {
+      name: "Philab",
+      mark: ({ colorScheme }) => {
+        let path = colorScheme === "dark" ? "./fundos/logo-claro.svg" : "./fundos/logo-claro.svg";
+        return /* @__PURE__ */ jsx("img", { src: path, height: 24 });
+      }
+    }
   }
 });
 
