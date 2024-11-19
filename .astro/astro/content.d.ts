@@ -149,12 +149,44 @@ declare module 'astro:content' {
 	>;
 
 	type ContentEntryMap = {
-		"posts": {
+		"disciplinas": {
+"curso-tecnico-em-eletromecanica.md": {
+	id: "curso-tecnico-em-eletromecanica.md";
+  slug: "curso-tecnico-em-eletromecanica";
+  body: string;
+  collection: "disciplinas";
+  data: any
+} & { render(): Render[".md"] };
+};
+"posts": {
 "hello-world.md": {
 	id: "hello-world.md";
   slug: "hello-world";
   body: string;
   collection: "posts";
+  data: any
+} & { render(): Render[".md"] };
+};
+"professores": {
+"cristhiano-da-costa.md": {
+	id: "cristhiano-da-costa.md";
+  slug: "cristhiano-da-costa";
+  body: string;
+  collection: "professores";
+  data: any
+} & { render(): Render[".md"] };
+"francisco-mateus.md": {
+	id: "francisco-mateus.md";
+  slug: "francisco-mateus";
+  body: string;
+  collection: "professores";
+  data: any
+} & { render(): Render[".md"] };
+"rafael-dos-santos.md": {
+	id: "rafael-dos-santos.md";
+  slug: "rafael-dos-santos";
+  body: string;
+  collection: "professores";
   data: any
 } & { render(): Render[".md"] };
 };

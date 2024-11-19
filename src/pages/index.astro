@@ -1,3 +1,11 @@
+---
+import ProfComponent from "../components/ProfComponent.astro";
+import DisciComponent from "../components/DisciComponent.astro";
+
+const profs = await Astro.glob('../content/professores/*.md');
+const disciplinas = await Astro.glob('../content/disciplinas/*.md');
+---
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -78,77 +86,7 @@
             coordenador de curso.</p>
 
         <div class="cardProf">
-            <div class="caixaProf flip">
-
-                <div class="caixaProf caixaFront">
-                    <img class="foto" src="/profs/lontra.jpg" alt="">
-
-                    <div class="infoProfs">
-                        <b>
-                            <p>Professor</p>
-                        </b>
-                        <p class="nome">Dr. Francisco Mateus Faria de Almeida Varasquim</p>
-                        <button class="btnFlip">Ver Mais</button>
-                    </div>
-
-                </div>
-
-                <div class="caixaEnd">
-                    <b><p class="nome">Dr. Francisco</p></b>
-                    <p>Curriculum Lattes: <a href="http://lattes.cnpq.br/7016230803272131">Francisco M F A Varasquim</a></p>
-                    <p>Contato: <a class="contato">franciscomateus@ifsp.edu.br</a></p>
-                    <button class="btnFlip">Ver Menos</button>
-                </div>
-
-            </div>
-
-            <div class="caixaProf flip">
-
-                <div class="caixaProf caixaFront">
-                    <img class="foto" src="/profs/5.jpeg" alt="">
-
-                    <div class="infoProfs">
-                        <b>
-                            <p>Coordenador</p>
-                        </b>
-                        <p class="nome">Dr. Cristhiano da Costa Herrera</p>
-                        <button class="btnFlip">Ver Mais</button>
-                    </div>
-
-                </div>
-
-                <div class="caixaEnd">
-                    <b>
-                        <p class="nome">Coordenador</p>
-                    </b>
-                    <p>Curriculum Lattes: <a target="_blank" href="http://lattes.cnpq.br/1445330128135589">Cristhiano C Herrera</a></p>
-                    <p>Contato: <a class="contato">cristhiano@ifsp.edu.br</a></p>
-                    <button class="btnFlip">Ver Menos</button>
-                </div>
-
-            </div>
-            <div class="caixaProf flip">
-                <div class="caixaProf caixaFront">
-                    <img class="foto" src="/profs/6.jpeg" alt="">
-                    <div class="infoProfs">
-
-                        <b>
-                            <p>Professor</p>
-                        </b>
-                        <p class="nome">Dr. Rafael dos Santos</p>
-                        <button class="btnFlip">Ver Mais</button>
-                    </div>
-                </div>
-
-                <div class="caixaEnd">
-                    <b>
-                        <p class="nome">Dr. Rafael</p>
-                    </b>
-                    <p>Curriculum Lattes: <a target="_blank" href="http://lattes.cnpq.br/8741281322705156">Rafael Santos</a></p>
-                    <p>Contato: <a class="contato">rafasantos01@ifsp.edu.br</a></p>
-                    <button class="btnFlip">Ver Menos</button>
-                </div>
-            </div>
+            {profs.map((prof) => <ProfComponent frontmatter={prof.frontmatter} />)}
         </div>
     </div>
 
@@ -157,30 +95,7 @@
 
         <div class="cursos">
 
-            <details>
-                <summary>Curso Técnico em Eletromecânica</summary>
-                <ul>
-                    <li>
-                        <details>
-                            <summary>Eletropneumática e Eletrohidráulica (ITPEPNH)</summary>
-                            <p>  O componente curricular aborda métodos para elaboração de circuitos e os principais
-                                componentes envolvidos nos sistemas eletro-hidráulicos e eletropneumáticos.</p>
-                            <a href="https://drive.ifsp.edu.br/s/ad5H11cWbF5XJh2#page=83" target="_blank">Mais
-                                informações</a>
-                        </details>
-                    </li>
-                    <li>
-                        <details>
-                            <summary>Controle e Automação (ITPCOAU)</summary>
-                            <p>  O componente curricular aborda os sistemas de controle e automação através de
-                                controladores lógicos programáveis, sensores industriais e atuadores. Linguagem de
-                                Programação.</p>
-                            <a href="https://drive.ifsp.edu.br/s/ad5H11cWbF5XJh2#page=81" target="_blank">Mais
-                                informações</a>
-                        </details>
-                    </li>
-                </ul>
-            </details>
+            {disciplinas.map((disciplina) => <DisciComponent frontmatter={disciplina.frontmatter} />)}
 
             <details>
                 <summary>Curso Técnico em Eletromecânica Integrado ao Ensino Médio</summary>

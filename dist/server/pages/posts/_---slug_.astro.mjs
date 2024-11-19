@@ -1,6 +1,6 @@
-import { c as createComponent, r as renderTemplate, m as maybeRenderHead, e as renderSlot, b as createAstro, d as renderComponent } from '../../chunks/astro/server_9jjUVFrS.mjs';
+import { c as createComponent, r as renderTemplate, m as maybeRenderHead, a as addAttribute, e as renderSlot, b as createAstro, d as renderComponent } from '../../chunks/astro/server_9jjUVFrS.mjs';
 import 'kleur/colors';
-import { a as getEntry } from '../../chunks/_astro_content_CMap5Ubg.mjs';
+import { a as getEntry } from '../../chunks/_astro_content_B9E-3a2q.mjs';
 import 'clsx';
 export { renderers } from '../../renderers.mjs';
 
@@ -9,7 +9,7 @@ const $$MarkdownPostLayout = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
   Astro2.self = $$MarkdownPostLayout;
   const { frontmatter } = Astro2.props;
-  return renderTemplate`${maybeRenderHead()}<h1>${frontmatter.title}</h1> ${renderSlot($$result, $$slots["default"])}`;
+  return renderTemplate`${maybeRenderHead()}<h1>${frontmatter.title}</h1> <img${addAttribute(frontmatter.image, "src")}> ${renderSlot($$result, $$slots["default"])}`;
 }, "/home/leo/tina/philab.fabsoftware.itp.ifsp.edu.br/src/layouts/MarkdownPostLayout.astro", void 0);
 
 const $$Astro = createAstro();

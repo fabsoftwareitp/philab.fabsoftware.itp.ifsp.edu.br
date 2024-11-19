@@ -97,12 +97,40 @@ const config = config$1({
     // }  
   },
   collections: {
+    professores: collection({
+      label: "Professores",
+      slugField: "title",
+      path: "src/content/professores/*",
+      format: { contentField: "content" },
+      schema: {
+        title: fields.slug({ name: { label: "Nome" } }),
+        cargo: fields.text({
+          label: "Cargo"
+        }),
+        nomeCompleto: fields.text({
+          label: "Nome completo",
+          multiline: true
+        }),
+        curriculo: fields.url({
+          label: "Curriculum Lattes"
+        }),
+        contato: fields.text({
+          label: "Contato",
+          multiline: true
+        })
+      }
+    }),
     posts: collection({
       label: "Posts",
       slugField: "title",
       path: "src/content/posts/*",
       format: { contentField: "content" },
       schema: {
+        image: fields.image({
+          label: "Image",
+          directory: "public/images/posts",
+          publicPath: "/images/posts/"
+        }),
         title: fields.slug({ name: { label: "Title" } }),
         content: fields.markdoc({ label: "Content", extension: "md" })
       }

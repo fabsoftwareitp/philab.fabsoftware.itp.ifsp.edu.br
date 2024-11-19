@@ -1,0 +1,18 @@
+---
+const {frontmatter} = Astro.props;
+---
+<!-- {frontmatter.disciplinas.map((a) => <p>{a.disciplina}</p>)} -->
+<details>
+    <summary>{frontmatter.curso}</summary>
+    <ul>
+        {frontmatter.disciplinas.map((disciplina) => {
+                <li>
+                    <details>
+                        <summary>{disciplina.disciplina}</summary>
+                        <p>{disciplina.descricao}</p>
+                        <a href={disciplina.link}>Mais informações</a>
+                    </details>
+                </li>
+        })}
+    </ul>
+</details>
