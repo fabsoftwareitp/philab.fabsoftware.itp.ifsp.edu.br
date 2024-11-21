@@ -86,8 +86,8 @@ export default config({
       name: 'Philab',
       mark: ({ colorScheme }) => {
         let path = colorScheme === 'dark'
-          ? './fundos/logo-claro.svg'
-          : './fundos/logo-claro.svg';
+          ? '/fundos/logo-claro.svg'
+          : '/fundos/logo-claro.svg';
         return <img src={path} height={24} />
       }
     }
