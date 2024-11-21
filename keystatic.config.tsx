@@ -38,6 +38,39 @@ export default config({
         }),
       },
     }),
+    paginaInicial: collection({
+      label: 'Página inicial',
+      slugField: 'title',
+      path: 'src/content/pagInicial/*',
+      format: { contentField: 'emptyContent' },
+      schema: { 
+        emptyContent: fields.emptyContent({ extension: 'md' }),
+        title: fields.slug({ name: { label: 'Nome' } }),
+        sobre: fields.text({
+          label: 'Sobre o lab',
+          multiline: true,
+        }),
+        img1: fields.image({
+            label: 'Imagem 1',
+            directory: 'public/images/pagInicial',
+            publicPath: '/images/pagInicial/'
+        }),
+        img2: fields.image({
+            label: 'Imagem 2',
+            directory: 'public/images/pagInicial',
+            publicPath: '/images/pagInicial/'
+        }),
+        img3: fields.image({
+            label: 'Imagem 3',
+            directory: 'public/images/pagInicial',
+            publicPath: '/images/pagInicial/'
+        }),
+        sobreProf: fields.text({
+          label: 'Descrição professores',
+          multiline: true,
+        }),
+      },
+    }),
     posts: collection({
       label: 'Posts',
       slugField: 'title',

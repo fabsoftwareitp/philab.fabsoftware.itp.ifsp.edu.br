@@ -158,6 +158,15 @@ declare module 'astro:content' {
   data: any
 } & { render(): Render[".md"] };
 };
+"pagInicial": {
+"pagina-inicial.md": {
+	id: "pagina-inicial.md";
+  slug: "pagina-inicial";
+  body: string;
+  collection: "pagInicial";
+  data: any
+} & { render(): Render[".md"] };
+};
 "posts": {
 "hello-world.md": {
 	id: "hello-world.md";

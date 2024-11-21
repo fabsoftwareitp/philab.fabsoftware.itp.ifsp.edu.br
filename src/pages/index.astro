@@ -1,9 +1,14 @@
 ---
 import ProfComponent from "../components/ProfComponent.astro";
 import DisciComponent from "../components/DisciComponent.astro";
+import { getCollection, getEntry } from "astro:content";
 
-const profs = await Astro.glob('../content/professores/*.md');
-const disciplinas = await Astro.glob('../content/disciplinas/*.md');
+// Pega todos os arquivos md de uma pasta especificada na pasta content
+const profs = await getCollection('professores');
+const disciplinas = await getCollection('disciplinas');
+
+// Pega um único arquivo md
+const infoGeneric = await getEntry('pagInicial', 'pagina-inicial');
 ---
 
 <!DOCTYPE html>
@@ -18,7 +23,6 @@ const disciplinas = await Astro.glob('../content/disciplinas/*.md');
 </head>
 
 <body>
-
     <b>
         <header>
             <a href="#sobre">
@@ -65,16 +69,12 @@ const disciplinas = await Astro.glob('../content/disciplinas/*.md');
         <b>
             <h2>Sobre o Laboratório</h2>
         </b>
-        <p>  O PHI Lab é um laboratório de ensino do Instituto Federal de São Paulo, campus Itapetininga. Com uma
-            finalidade multifuncional, o laboratório tem na flexibilidade uma de suas marcas, onde além de experimentos
-            diversos que podem ser realizados em suas diferentes bancadas, aulas teóricas também podem ser realizadas,
-            uma vez que possui estrutura adequada para tal. Esta característica permite que vários cursos oferecidos
-            pelo campus possam se utilizar de suas instalações.</p>
+        <p>{infoGeneric.data.sobre}</p>
 
         <div class="imgSobre">
-            <img class="img3" src="/fundos/1A.jpeg" alt="">
-            <img class="img4" src="/fundos/1B.jpeg" alt="">
-            <img class="img3" src="/fundos/1C.jpeg" alt="">
+                <img class="img3" src={infoGeneric.data.img1} alt="" />
+                <img class="img4" src={infoGeneric.data.img2} alt="" />
+                <img class="img3" src={infoGeneric.data.img3} alt="" />
         </div>
     </div>
 
@@ -82,11 +82,10 @@ const disciplinas = await Astro.glob('../content/disciplinas/*.md');
         <b>
             <h2>Professores</h2>
         </b>
-        <p class="p">  A equipe é formada por professores da mecânicae atualmente contamos com dois professores e um
-            coordenador de curso.</p>
+        <p class="p">  {infoGeneric.data.sobreProf}</p>
 
         <div class="cardProf">
-            {profs.map((prof) => <ProfComponent frontmatter={prof.frontmatter} />)}
+            {profs.map((prof) => <ProfComponent frontmatter={prof.data} />)}
         </div>
     </div>
 
@@ -95,7 +94,7 @@ const disciplinas = await Astro.glob('../content/disciplinas/*.md');
 
         <div class="cursos">
 
-            {disciplinas.map((disciplina) => <DisciComponent frontmatter={disciplina.frontmatter} />)}
+            {disciplinas.map((disciplina) => <DisciComponent frontmatter={disciplina.data} />)}
 
             <details>
                 <summary>Curso Técnico em Eletromecânica Integrado ao Ensino Médio</summary>
