@@ -93,135 +93,9 @@ const infoGeneric = await getEntry('pagInicial', 'pagina-inicial');
         <h2>Disciplinas que utilizam o PHI Lab</h2>
 
         <div class="cursos">
-
             {disciplinas.map((disciplina) => <DisciComponent frontmatter={disciplina.data} />)}
-
-            <details>
-                <summary>Curso Técnico em Eletromecânica Integrado ao Ensino Médio</summary>
-                <ul>
-                    <li>
-                        <details>
-                            <summary>Eletropneumática e Eletrohidráulica (ITPEPEH)</summary>
-                            <p>O componente curricular aborda métodos para elaboração de circuitos e os principais
-                                componentes envolvidos nos sistemas eletro-hidráulicos e eletropneumáticos.</p>
-                            <a href="https://drive.google.com/file/d/1m1i4KZwBb6Wam3WMIVUMKvM2-LEKYyPH/view#page=280"
-                                target="_blank">Mais informações</a>
-                        </details>
-                    </li>
-                    <li>
-                        <details>
-                            <summary>Pneumática e Hidráulica (ITPPHID)</summary>
-                            <p>O componente curricular aborda métodos para elaboração de circuitos e os principais
-                                componentes envolvidos nos sistemas hidráulicos e pneumáticos.</p>
-                            <a href="https://drive.google.com/file/d/1m1i4KZwBb6Wam3WMIVUMKvM2-LEKYyPH/view#page=247"
-                                target="_blank">Mais informações</a>
-                        </details>
-                    </li>
-                    <li>
-                        <details>
-                            <summary>Controle e Automação (ITPCOAU)</summary>
-                            <p>  O componente curricular aborda os sistemas de controle e automação através de
-                                controladores lógicos programáveis, sensores industriais e atuadores. Linguagem de
-                                Programação.</p>
-                            <a href="https://drive.google.com/file/d/1m1i4KZwBb6Wam3WMIVUMKvM2-LEKYyPH/view#page=249"
-                                target="_blank">Mais informações</a>
-                        </details>
-                    </li>
-                </ul>
-            </details>
-
-            <details>
-                <summary>Curso Técnico em Mecânica</summary>
-                <ul>
-                    <li>
-                        <details>
-                            <summary>Pneumática e Hidráulica 1 (ITPPHT1)</summary>
-                            <p>  O componente curricular dispõe sobre a teoria básica da Pneumática eHidráulica,
-                                simbologia de válvulas e traçado de circuitos pneumáticos e hidráulicos</p>
-                            <a href="https://drive.ifsp.edu.br/s/6lX84rpgCDDen1M#page=78" target="_blank">Mais
-                                informações</a>
-                        </details>
-                    </li>
-                    <li>
-                        <details>
-                            <summary>Pneumática e Hidráulica 2 (ITPPHQ2)</summary>
-                            <p>  O componente curricular desenvolve conteúdos e habilidades sobre traçado e
-                                interpretação de circuitos eletropneumáticos e eletro-hidráulicos.</p>
-                            <a href="https://drive.ifsp.edu.br/s/6lX84rpgCDDen1M#page=88" target="_blank">Mais
-                                informações</a>
-                        </details>
-                    </li>
-                    <li>
-                        <details>
-                            <summary>Controle e Automação (ITPCOAT)</summary>
-                            <p>  O componente curricular desenvolve os fundamentos de Sistemas de Controle
-                                e de Controlador Lógico Programável (CLP) na história da Automação e
-                                programá-lo em nível básico. Fundamentos de Comandos Elétricos.
-                                Contextualizar o CLP na história da automação e fundamentar sobre comandos
-                                elétricos.</p>
-                            <a href="https://drive.ifsp.edu.br/s/6lX84rpgCDDen1M#page=68" target="_blank">Mais
-                                informações</a>
-                        </details>
-                    </li>
-                </ul>
-            </details>
-
-            <details>
-                <summary>Curso de Graduação em Engenharia Mecânica</summary>
-                <ul>
-                    <li>
-                        <details>
-                            <summary>Mecânica dos Fluidos (ITPMECF)</summary>
-                            <p>  O componente curricular aborda o estudo do comportamento dos fluidos e os princípios
-                                envolvidos nos diferentes tipos de escoamento.</p>
-                            <a href="https://drive.ifsp.edu.br/s/0DzFe7hSLOwPXRC#page=166" target="_blank">Mais
-                                informações</a>
-                        </details>
-                    </li>
-                    <li>
-                        <details>
-                            <summary>Controle e Automação de Processos (ITPCOAP)</summary>
-                            <p>  O componente curricular aborda a teoria de sistemas de controle e a utilização de
-                                tecnologias e
-                                equipamentos para controle e automação de processos industriais.</p>
-                            <a href="https://drive.ifsp.edu.br/s/0DzFe7hSLOwPXRC#page=164" target="_blank">Mais
-                                informações</a>
-                        </details>
-                    </li>
-                    <li>
-                        <details>
-                            <summary>Máquinas de Fluxo (ITPMAFL)</summary>
-                            <p>  O componente curricular aborda as principais características, e os sistemas de
-                                operação, de
-                                máquinas de fluxo, tais como bombas centrífugas, turbinas hidráulicas, entre outros..
-                            </p>
-                            <a href="https://drive.ifsp.edu.br/s/0DzFe7hSLOwPXRC#page=204" target="_blank">Mais
-                                informações</a>
-                        </details>
-                    </li>
-                    <li>
-                        <details>
-                            <summary>Sistemas Hidráulicos e Pneumáticos (ITPSHPN)</summary>
-                            <p>  O componente curricular aborda os conceitos necessários para o projeto, controle
-                                ambiental e
-                                dimensionamento e segurança de sistemas hidráulicos e pneumáticos.</p>
-                            <a href="https://drive.ifsp.edu.br/s/0DzFe7hSLOwPXRC#page=190" target="_blank">Mais
-                                informações</a>
-
-                        </details>
-                    </li>
-                    <li>
-                        <details>
-                            <summary>Robótica Industrial (ITPROBI)</summary>
-                            <p>  O componente curricular aborda os diferentes tipos de robôs, seus componentes e
-                                programação.</p>
-                            <a href="https://drive.ifsp.edu.br/s/0DzFe7hSLOwPXRC#page=218" target="_blank">Mais
-                                informações</a>
-                        </details>
-                    </li>
-                </ul>
-            </details>
         </div>
+
     </div>
 
     <div id="equipamentos">
@@ -345,7 +219,80 @@ const infoGeneric = await getEntry('pagInicial', 'pagina-inicial');
 
     </footer>
 
-    <script src="../scripts/script.js"> </script>
+    <script is:inline>
+        function bcp() {
+            document.getElementById("bcp").style.color = "#1C3C61";
+            document.getElementById("bch").style.color = "black";
+            document.getElementById("bmf").style.color = "black";
+
+            document.getElementById("bcp").style.fontWeight = "bold";
+            document.getElementById("bch").style.fontWeight = "normal";
+            document.getElementById("bmf").style.fontWeight = "normal";
+
+            document.querySelector(".infoBCP").style.display = "block";
+            document.querySelector(".infoBCH").style.display = "none";
+            document.querySelector(".infoBMF").style.display = "none";
+
+            document.querySelector(".slidBCP").style.display = "flex";
+            document.querySelector(".slidBCH").style.display = "none";
+            document.querySelector(".slidBMF").style.display = "none";
+        }
+
+        function bch() {
+            document.getElementById("bch").style.color = "#1C3C61";
+            document.getElementById("bcp").style.color = "black";
+            document.getElementById("bmf").style.color = "black";
+
+            document.getElementById("bcp").style.fontWeight = "normal";
+            document.getElementById("bch").style.fontWeight = "bold";
+            document.getElementById("bmf").style.fontWeight = "normal";
+
+            document.querySelector(".infoBCP").style.display = "none";
+            document.querySelector(".infoBCH").style.display = "block";
+            document.querySelector(".infoBMF").style.display = "none";
+
+            document.querySelector(".slidBCP").style.display = "none";
+            document.querySelector(".slidBCH").style.display = "flex";
+            document.querySelector(".slidBMF").style.display = "none";
+
+        }
+
+        function bmf() {
+            document.getElementById("bmf").style.color = "#1C3C61";
+            document.getElementById("bcp").style.color = "black";
+            document.getElementById("bch").style.color = "black";
+            
+            document.getElementById("bcp").style.fontWeight = "normal";
+            document.getElementById("bch").style.fontWeight = "normal";
+            document.getElementById("bmf").style.fontWeight = "bold";
+
+            document.querySelector(".infoBCP").style.display = "none";
+            document.querySelector(".infoBCH").style.display = "none";
+            document.querySelector(".infoBMF").style.display = "block";
+
+            document.querySelector(".slidBCP").style.display = "none";
+            document.querySelector(".slidBCH").style.display = "none";
+            document.querySelector(".slidBMF").style.display = "flex";
+        }
+
+        //menu 
+
+        function menu() {
+            const menu =  document.getElementById('menu');
+
+            menu.classList.toggle('active');
+        }
+        const menuBTN = document.getElementById('menuBTN');
+        menuBTN.addEventListener('click', menu);
+
+        document.querySelectorAll('.btnFlip').forEach(button => {
+            button.addEventListener('click', () => {
+                const flip = button.closest('.flip');
+                flip.classList.toggle('flipped');
+            });
+        });
+
+    </script>
 
 </body>
 

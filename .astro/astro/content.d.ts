@@ -150,9 +150,30 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"disciplinas": {
+"curso-de-graduacao-em-engenharia-mecanica.md": {
+	id: "curso-de-graduacao-em-engenharia-mecanica.md";
+  slug: "curso-de-graduacao-em-engenharia-mecanica";
+  body: string;
+  collection: "disciplinas";
+  data: any
+} & { render(): Render[".md"] };
+"curso-tecnico-em-eletromecanica-integrado-ao-ensino-medio.md": {
+	id: "curso-tecnico-em-eletromecanica-integrado-ao-ensino-medio.md";
+  slug: "curso-tecnico-em-eletromecanica-integrado-ao-ensino-medio";
+  body: string;
+  collection: "disciplinas";
+  data: any
+} & { render(): Render[".md"] };
 "curso-tecnico-em-eletromecanica.md": {
 	id: "curso-tecnico-em-eletromecanica.md";
   slug: "curso-tecnico-em-eletromecanica";
+  body: string;
+  collection: "disciplinas";
+  data: any
+} & { render(): Render[".md"] };
+"curso-tecnico-em-mecanica.md": {
+	id: "curso-tecnico-em-mecanica.md";
+  slug: "curso-tecnico-em-mecanica";
   body: string;
   collection: "disciplinas";
   data: any
@@ -164,15 +185,6 @@ declare module 'astro:content' {
   slug: "pagina-inicial";
   body: string;
   collection: "pagInicial";
-  data: any
-} & { render(): Render[".md"] };
-};
-"posts": {
-"hello-world.md": {
-	id: "hello-world.md";
-  slug: "hello-world";
-  body: string;
-  collection: "posts";
   data: any
 } & { render(): Render[".md"] };
 };

@@ -71,21 +71,6 @@ export default config({
         }),
       },
     }),
-    posts: collection({
-      label: 'Posts',
-      slugField: 'title',
-      path: 'src/content/posts/*',
-      format: { contentField: 'content' },
-      schema: {
-        image: fields.image({
-          label: 'Image',
-          directory: 'public/images/posts',
-          publicPath: '/images/posts/'
-        }),
-        title: fields.slug({ name: { label: 'Title' } }),
-        content: fields.markdoc({ label: 'Content', extension: 'md' }),
-      },
-    }),
     disciplinas: collection({
       label: 'Disciplinas',
       slugField: 'title',
