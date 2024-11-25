@@ -98,6 +98,42 @@ export default config({
         ),
       },
     }),
+    equipamentos: collection({
+      label: 'Equipamentos',
+      slugField: 'title',
+      path: 'src/content/equipamentos/*',
+      format: { contentField: 'emptyContent' },
+      schema: {
+        title: fields.slug({ name: { label: 'Title' } }),
+        emptyContent: fields.emptyContent({ extension: 'md' }),
+        equipamentos: fields.array(
+          fields.object({
+            nome: fields.text({ label: 'Nome do equipamento' }),
+            descricao: fields.text({ label: 'Descrição', multiline: true, }),
+            capa: fields.image({
+              label: 'Capa',
+              directory: 'public/images/equipamentos',
+              publicPath: '/images/equipamentos/',
+            }),
+            imagens: fields.array(
+              fields.image({
+                label: 'Imagens',
+                directory: 'public/images/equipamentos',
+                publicPath: '/images/equipamentos/',
+              }),
+              {
+                label: 'Imagens',
+              }
+            ),
+          }),
+          // Labelling options
+          {
+            label: 'Equipamento',
+            itemLabel: props => props.fields.nome.value
+          }
+        ),
+      },
+    }),
   },
   ui: {
     brand: { 

@@ -179,6 +179,15 @@ declare module 'astro:content' {
   data: any
 } & { render(): Render[".md"] };
 };
+"equipamentos": {
+"equipamentos.md": {
+	id: "equipamentos.md";
+  slug: "equipamentos";
+  body: string;
+  collection: "equipamentos";
+  data: any
+} & { render(): Render[".md"] };
+};
 "pagInicial": {
 "pagina-inicial.md": {
 	id: "pagina-inicial.md";
