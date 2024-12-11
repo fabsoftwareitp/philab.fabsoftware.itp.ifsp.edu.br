@@ -12,7 +12,6 @@ equipamentos:
     imagens:
       - /images/equipamentos/equipamentos/equipamentos/0/imagens/0.jpeg
       - /images/equipamentos/equipamentos/equipamentos/0/imagens/1.jpeg
-      - /images/equipamentos/equipamentos/equipamentos/0/imagens/2.jpg
   - nome: Bancada de Circuitos Hidráulicos
     descricao: ' O PHI Lab conta com 1 bancada dupla para montagem circuitos hidráulicos e eletro-hidráulicos, bancada esta que pode proporcionar montagens de experimentos para até 2 grupos simultaneamente. A bancada conta com dois gaveteiros contendo uma série de componentes hidráulicos e eletro-hidráulicos, de modo a mantê-los organizados e corretamente armazenados.'
     capa: /images/equipamentos/equipamentos/equipamentos/1/capa.jpeg
