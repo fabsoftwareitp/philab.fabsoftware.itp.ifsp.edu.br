@@ -436,26 +436,7 @@ li details summary {
     color: #13355e;
 }
 
-@media (width <= 1000px) {
-    .opcoes button {
-        padding: 3vh;
-    }
-
-    .infoBCP, .infoBCH, .infoBMF {
-        width: 40vw;
-    }
-
-    .conteudoEquipamentos {
-        width: 90vw;
-    }
-
-    .caixaEnd p, .caixaEnd .nome {
-        font-size: 0.8rem;
-    }
-    
-}
-
-@media (width <= 800px) {
+@media (max-width: 800px) {
 
     html {
         font-size: 14px;
@@ -613,7 +594,7 @@ li details summary {
     }
 }
 
-@media (width <= 760px) {
+@media (max-witdh: 768px) {
     #equipamentos {
         margin-top: 3vh;
     }
@@ -663,111 +644,118 @@ li details summary {
     .container h2 {
         text-align: center;
     }
-}
 
-@media (width <= 600px) {
-    html {
-        font-size: 10px;
+    .img1, .img2 {
+        display: none;
+    }
+
+    #menuBTN {
+        display: block;
+        margin-right: 10px;
+    }
+
+    #menuBTN ul li {
+        cursor: pointer;
+        width: 30px;
+        height: 3px;
+        background-color: #0b2542;
+        margin: 3px;
+        position: relative;
+    }
+
+    #nav {
+        visibility: hidden; 
+        width: 91vw;  
+        z-index: 1;
+        flex-direction: column; 
+        position: absolute; 
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #F5F5F5;
+        align-items: center;
+        margin: 0;
+    }
+
+    #nav li {
+        margin: 10px;
+        border-bottom: 1px solid rgba(0, 0, 0, .05);
+        text-align: center;
+        width: 100px;
+    }
+
+    #menu.active #nav {
+        visibility: visible;
+        display: flex;
+        box-shadow: 0vh 1vh 1vh rgba(0, 0, 0, 0.356);
+    }
+
+    #menu.active #menuBTN #hamb2 {
+        background: transparent;
+    }
+
+    #menu.active #menuBTN #hamb1 {
+        transform: rotate(135deg);
+        top: 6px;
+        transition: .5s;
+    }
+
+    #menu.active #menuBTN #hamb3 {
+        transform: rotate(-135deg);
+        top: -6px;
+        transition: .5s;
+    }
+
+    #menu #menuBTN #hamb3, #menu #menuBTN #hamb1 {
+        transform: rotate(0deg);
+        transition: .5s;
     }
 
     .paginaInicial {
-        height: 70vh;
-    }
-
-    h1 {
-        width: 48vw;
-    }
-
-    .img1 {
-        width: 22vw;
-        height: 15vh;
-    }
-
-    .img2 {
-        width: 16vw;
-        height: 15vh;
-    }
-
-    .imgInicial {
-        height: 33vh;
-        width: 40vw;
-    }
-
-    header {
-        height: auto;
-    }
-
-    .img4 {
-        width: 22vw;
-        height: 18vh;
-    }
-    
-    .img3 {
-        width: 22vw;
-        height: 18vh;
-    }
-
-    .imgSobre {
-        width: 70vw;
-        height: auto;
-        margin-top: 2vh;
-    }
-
-    p {
-        line-height: 4vh;
-    }
-
-    #professores {
-        margin-top: 5vh;
-    }
-
-    .cardProf {
-        height: 90vh;
-        margin-top: 1.5vh;
-    }
-
-    .nome {
-        line-height: 2.5vh;
-    }
-
-    .caixaProf {
-        width: 50vw;
-        height: 25vh;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .infoProfs {
-        width: 30vw;
+        height: 50vh;
     }
 
     .caixaEnd p {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
     
     .caixaEnd .nome {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
     }
 
-    details ul p, details ul a {
-        line-height: 2vh;
+    .caixaEnd button {
+        width: 15vw;
     }
 
-    summary {
-        line-height: 5vh;
+    .paginaInicial h1, .paginaInicial h4 {
+        width: 70vw;
+        margin-left: 5vw;
     }
 
-    .conteudoEquipamentos {
-        height: auto;
+    .imgEquipamento, .slid, .slid img {
+        width: 60vw;
+        height: 70vh;
+    }
+
+    .infoBCP, .infoBCH, .infoBMF {
+        width: 60vw;
     }
 
     .slidBCH, .slidBCP, .slidBMF, .slidBCH img, .slidBCP img, .slidBMF img {
-        height:50vh;
+        height:70vh;
     }
 
-}
+    #radio1:checked ~ .slidBCP .first,  #radio1:checked ~ .slidBMF .first #radio1:checked ~ .slidBCH .first {
+        margin-left: 0;
+    }
+    
+    #radio2:checked ~ .slidBCP .first, #radio2:checked ~ .slidBMF .first, #radio2:checked ~ .slidBCH .first {
+        margin-left: -60vw;
+    }
+    
+    #radio3:checked ~ .slidBCP .first, #radio3:checked ~ .slidBMF .first, #radio3:checked ~ .slidBCH .first {
+        margin-left: -120vw;
+    }
 
-@media (width <= 450px) {
     .img1, .img2 {
         display: none;
     }
@@ -880,68 +868,217 @@ li details summary {
     }
 }
 
-@media (width <= 400px) {
-    .imgSobre {
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        height: 130vw;
+@media (max-witdh: 600px) {
+    html {
+        font-size: 10px;
     }
 
-    .img3, .img4 {
-        margin: 0;
+    .paginaInicial {
+        height: 70vh;
+    }
+
+    h1 {
+        width: 48vw;
+    }
+
+    .img1 {
+        width: 22vw;
+        height: 15vh;
+    }
+
+    .img2 {
+        width: 16vw;
+        height: 15vh;
+    }
+
+    .imgInicial {
+        height: 33vh;
         width: 40vw;
-        height: 40vw;
     }
 
-    .opcoes {
-        justify-content: center;
-        width: 100vw;
-    }
-
-    .paginaInicial h1 {
-        width: 90vw;
-    }
-
-    .caixaProf {
-        width: 60vw;
-    }
-
-    .foto {
-        width: 20vw;
-        height: 20vw;
-    }
-
-    #disciplinas h2 {
-        width: 80vw;
-        text-align: center;
-    } 
-
-    .slid img {
-        width: 60vw;
+    header {
         height: auto;
     }
 
-    .slid {
-        height: min-content;
+    .img4 {
+        width: 22vw;
+        height: 18vh;
+    }
+    
+    .img3 {
+        width: 22vw;
+        height: 18vh;
+    }
+
+    .imgSobre {
+        width: 70vw;
+        height: auto;
+        margin-top: 2vh;
+    }
+
+    p {
+        line-height: 4vh;
+    }
+
+    #professores {
+        margin-top: 5vh;
+    }
+
+    .cardProf {
+        height: 90vh;
+        margin-top: 1.5vh;
+    }
+
+    .nome {
+        line-height: 2.5vh;
+    }
+
+    .caixaProf {
+        width: 50vw;
+        height: 25vh;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .infoProfs {
+        width: 30vw;
+    }
+
+    .caixaEnd p {
+        font-size: 1.3rem;
+    }
+    
+    .caixaEnd .nome {
+        font-size: 1.4rem;
+    }
+
+    details ul p, details ul a {
+        line-height: 2vh;
+    }
+
+    summary {
+        line-height: 5vh;
+    }
+
+    .conteudoEquipamentos {
+        height: auto;
     }
 
     .slidBCH, .slidBCP, .slidBMF, .slidBCH img, .slidBCP img, .slidBMF img {
         height:50vh;
-        
     }
 
-    .imgEquipamento {
-        height: auto;
-    }
 }
 
-@media(width >= 1370px) {
-    html {
-        font-size: 23px;
+@media (max-width: 450px) {
+    .img1, .img2 {
+        display: none;
     }
 
-    .flip button {
-        border-radius: 50px;
+    #menuBTN {
+        display: block;
+        margin-right: 10px;
+    }
+
+    #menuBTN ul li {
+        cursor: pointer;
+        width: 30px;
+        height: 3px;
+        background-color: #0b2542;
+        margin: 3px;
+        position: relative;
+    }
+
+    #nav {
+        visibility: hidden; 
+        width: 91vw;  
+        z-index: 1;
+        flex-direction: column; 
+        position: absolute; 
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #F5F5F5;
+        align-items: center;
+        margin: 0;
+    }
+
+    #nav li {
+        margin: 10px;
+        border-bottom: 1px solid rgba(0, 0, 0, .05);
+        text-align: center;
+        width: 100px;
+    }
+
+    #menu.active #nav {
+        visibility: visible;
+        display: flex;
+        box-shadow: 0vh 1vh 1vh rgba(0, 0, 0, 0.356);
+    }
+
+    #menu.active #menuBTN #hamb2 {
+        background: transparent;
+    }
+
+    #menu.active #menuBTN #hamb1 {
+        transform: rotate(135deg);
+        top: 6px;
+        transition: .5s;
+    }
+
+    #menu.active #menuBTN #hamb3 {
+        transform: rotate(-135deg);
+        top: -6px;
+        transition: .5s;
+    }
+
+    #menu #menuBTN #hamb3, #menu #menuBTN #hamb1 {
+        transform: rotate(0deg);
+        transition: .5s;
+    }
+
+    .paginaInicial {
+        height: 50vh;
+    }
+
+    .caixaEnd p {
+        font-size: 1.2rem;
+    }
+    
+    .caixaEnd .nome {
+        font-size: 1.3rem;
+    }
+
+    .caixaEnd button {
+        width: 15vw;
+    }
+
+    .paginaInicial h1, .paginaInicial h4 {
+        width: 70vw;
+        margin-left: 5vw;
+    }
+
+    .imgEquipamento, .slid, .slid img {
+        width: 60vw;
+        height: 70vh;
+    }
+
+    .infoBCP, .infoBCH, .infoBMF {
+        width: 60vw;
+    }
+
+    .slidBCH, .slidBCP, .slidBMF, .slidBCH img, .slidBCP img, .slidBMF img {
+        height:70vh;
+    }
+
+    #radio1:checked ~ .slidBCP .first,  #radio1:checked ~ .slidBMF .first #radio1:checked ~ .slidBCH .first {
+        margin-left: 0;
+    }
+    
+    #radio2:checked ~ .slidBCP .first, #radio2:checked ~ .slidBMF .first, #radio2:checked ~ .slidBCH .first {
+        margin-left: -60vw;
+    }
+    
+    #radio3:checked ~ .slidBCP .first, #radio3:checked ~ .slidBMF .first, #radio3:checked ~ .slidBCH .first {
+        margin-left: -120vw;
     }
 }
