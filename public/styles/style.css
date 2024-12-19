@@ -52,7 +52,6 @@ header {
     font-size: 0.82rem;
     height: 8.5vh;
     box-shadow: 0vh 0.5vh 2vh rgba(0, 0, 0, 0.5);
-    position: relative; 
     z-index: 1;
 }
 
@@ -142,11 +141,6 @@ h2 {
 p {
     font-size: 1.25rem;
     line-height: 5.1vh;
-}
-
-#sobre p {
-    width: 75vw;
-    text-align: justify;
 }
 
 .imgSobre {
@@ -343,9 +337,13 @@ details ul p, details ul a {
 ul {list-style-type: none}
 
 li p {
+    
     display: flex;
+    
     align-items: center;
+    
 }
+
 
 .imgEquipamento, .slidBCP, .slidBCH, .slidBMF {
     width: 25vw;
@@ -454,6 +452,10 @@ li details summary {
     .imgInicial {
         display: none;
     }
+
+    #sobre {
+        margin-top: 20%;
+    }
     
     .nome {
         line-height: 4vh;
@@ -472,7 +474,7 @@ li details summary {
     }
 
     .infoProfs {
-        width: 28vw;
+        width: 100vw;
     }
 
     .foto {
@@ -480,8 +482,8 @@ li details summary {
         height: 15vw;
     }
 
-    .infoProfs button {
-        width: 15vw;
+    .caixaProf button {
+        width: 30vw;
         height: 4vh;
     }
 
@@ -624,12 +626,44 @@ li details summary {
     }
 
     .caixaProf {
+        display: flex;
+        flex-direction: column;
         width: 80%;
+        height: auto;
+        margin-bottom: 10%;
     }
 
     .cardProf {
-        width: 80vw;
+        width: 100vw;
         height: 100vh;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        margin-bottom: 70%;
+        align-items: center;
+    }
+
+    #professores {
+        margin-top: 20%;
+    }
+
+    .imgEquipamento {
+        margin-bottom: 20%;
+    }
+
+    p {
+        width: 80vw;
+        text-align: justify;
+    }
+
+    .centralizarTexto {
+        text-align: center;
+        width: 80%
+    }
+
+    .infoProfs {
+        width: auto;
+        display: flex;
+        align-items: center;
         flex-direction: column;
     }
 }
