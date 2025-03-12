@@ -8,38 +8,6 @@ body {
     padding: 0;
 }
 
-.flip {
-    transition: transform 1s;
-}
-
-.caixaEnd {
-    display: none;
-    transform: rotateY(180deg);
-}
-
-.flip.flipped {
-    transform: rotateY(180deg);
-}
-
-.flip.flipped .caixaEnd {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
-    opacity: 1;
-}
-
-.flip.flipped .caixaFront {
-    display: none;
-    opacity: 0;
-}
-
-button .btnFlipContainer {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-}
-
 header a {
     text-decoration: none;
     color: inherit;
@@ -49,7 +17,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 0.82rem;
+    font-size: 1.3rem;
     height: 8.5vh;
     box-shadow: 0vh 0.5vh 2vh rgba(0, 0, 0, 0.5);
     z-index: 1;
@@ -98,31 +66,74 @@ h4 {
     height: 46vh;
     flex-wrap: wrap;
     justify-content: space-between;
-
-}
-
-#nav {
-    width: 50vw;
-    display: flex;
-    justify-content: flex-end;
-    margin-right: 10px;
-}
-
-#nav a {
-    font-size: 0.95rem;
-    margin: 20px;
-}
-
-#menuBTN {
-    display: none;
 }
 
 header a:hover {
     text-shadow: 0 0 7px #0b254259;
 }
 
-#phiHeader {
-    margin-left: 3vw;
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu1 {
+    display: none;
+    align-items: center;
+    margin-right: 3%;
+}
+
+.menu2 {
+    display: flex;
+    flex-direction: column;
+    gap: 20%;
+    height: 30%;
+    width: 50%;
+}
+
+@keyframes menuBar1 {
+    0% {
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: rotate(45deg);
+        opacity: 1;
+    }
+}
+
+@keyframes menuBar2{
+
+}
+
+.menuBar {
+    width: 10vw;
+    height: 5px;
+    background-color: black;
+}
+
+.menuBar:hover {
+    animation: menuBar1 ease-in-out forwards;
+}
+
+.nav1 {
+    margin-left: 3%;
+}
+
+.nav2 {
+    width: 27vw;
+    margin-right: 3%;
+    display: flex;
+    align-items: center;
+}
+
+.nav2 ul {
+    display: flex;
+    justify-content: right;
+    justify-content: space-between;
+    width: 100%;
 }
 
 h2 {
@@ -227,6 +238,38 @@ p {
     padding-bottom: 2vh;
 }
 
+.flip {
+    transition: transform 1s;
+}
+
+.caixaEnd {
+    display: none;
+    transform: rotateY(180deg);
+}
+
+.flip.flipped {
+    transform: rotateY(180deg);
+}
+
+.flip.flipped .caixaEnd {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    opacity: 1;
+}
+
+.flip.flipped .caixaFront {
+    display: none;
+    opacity: 0;
+}
+
+button .btnFlipContainer {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
 .caixaEnd p {
     font-size: 1rem;
     margin: 0;
@@ -241,6 +284,7 @@ p {
     color: #0b2542;
     color: inherit;
 }
+
 
 #professores {
     margin-top: 12vh;
@@ -361,15 +405,6 @@ li p {
     width: 300vw;
 }
 
-.navigation {
-    width: 74px;
-    position: relative;
-    display: flex;
-    bottom: 25px;
-    left: 50%;
-    transform: translate(-50%);
-}
-
 .bar {
     width: 10px;
     height: 10px;
@@ -441,6 +476,14 @@ li details summary {
 
     h4 {
         width: 25%;
+    }
+
+    .nav2 {
+        display: none;
+    }
+
+    .menu1 {
+        display: flex;
     }
 
     .title {
@@ -534,67 +577,6 @@ li details summary {
 
     .img3, .img4 {
         width: 80%;
-    }
-
-    #menuBTN {
-        display: block;
-        margin-right: 10px;
-    }
-
-    #menuBTN ul li {
-        cursor: pointer;
-        width: 30px;
-        height: 3px;
-        background-color: #0b2542;
-        margin: 3px;
-        position: relative;
-    }
-
-    #nav {
-        visibility: hidden; 
-        width: 100%;  
-        z-index: 1;
-        flex-direction: column; 
-        position: absolute; 
-        background-color: #F5F5F5;
-        right: -4%;
-        display: flex;
-        align-items: center;
-        margin-right: 4%;
-    }
-
-    #nav li {
-        margin: 10px;
-        border-bottom: 1px solid rgba(0, 0, 0, .05);
-        text-align: center;
-        width: 100%;
-    }
-
-    #menu.active #nav {
-        visibility: visible;
-        display: flex;
-        box-shadow: 0vh 1vh 1vh rgba(0, 0, 0, 0.356);
-    }
-
-    #menu.active #menuBTN #hamb2 {
-        background: transparent;
-    }
-
-    #menu.active #menuBTN #hamb1 {
-        transform: rotate(135deg);
-        top: 6px;
-        transition: .5s;
-    }
-
-    #menu.active #menuBTN #hamb3 {
-        transform: rotate(-135deg);
-        top: -6px;
-        transition: .5s;
-    }
-
-    #menu #menuBTN #hamb3, #menu #menuBTN #hamb1 {
-        transform: rotate(0deg);
-        transition: .5s;
     }
 
     .slidBCH, .slidBCP, .slidBMF, .slidBCH img, .slidBCP img, .slidBMF img {

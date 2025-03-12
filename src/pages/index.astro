@@ -26,27 +26,30 @@ const equipamento = await getEntry('equipamentos', 'equipamentos');
 <body>
     <b>
         <header>
-            <a href="#sobre">
-                <h3 id="phiHeader">PHI Lab</h3>
-            </a>
-
-            <div id="menu">
-
-                <div id="menuBTN">
-                    <ul>
-                        <li id="hamb1"></li>
-                        <li id="hamb2"></li>
-                        <li id="hamb3"></li>
-                    </ul>
+            <div class="navbar">
+                <div class="nav1">
+                    
+                    <a href="#sobre">
+                        <h3 id="phiHeader">PHI Lab</h3>
+                    </a>
                 </div>
-                
-                    <ul id="nav">
+
+                <div class="menu1">
+                    <div class="menu2">
+                        <span class="menuBar"></span>
+                        <span class="menuBar"></span>
+                        <span class="menuBar"></span>
+                    </div>
+                </div>
+
+                <div class="nav2">
+                    <ul>
                         <li><a href="#professores">Professores</a></li>
                         <li><a href="#disciplinas">Disciplinas</a></li>
                         <li><a href="#equipamentos">Equipamentos</a></li>
                     </ul>
                 </div>
-
+            </div>
         </header>
     </b>
 
@@ -265,8 +268,6 @@ const equipamento = await getEntry('equipamentos', 'equipamentos');
 
             menu.classList.toggle('active');
         }
-        const menuBTN = document.getElementById('menuBTN');
-        menuBTN.addEventListener('click', menu);
 
         document.querySelectorAll('.btnFlip').forEach(button => {
             button.addEventListener('click', () => {
