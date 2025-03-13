@@ -20,7 +20,7 @@ header {
     font-size: 1.3rem;
     height: 8.5vh;
     box-shadow: 0vh 0.5vh 2vh rgba(0, 0, 0, 0.5);
-    z-index: 1;
+    z-index: 999;
 }
 
 .paginaInicial {
@@ -76,6 +76,7 @@ header a:hover {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    background-color: #F5F5F5;;
 }
 
 .menu1 {
@@ -87,25 +88,88 @@ header a:hover {
 .menu2 {
     display: flex;
     flex-direction: column;
-    gap: 20%;
-    height: 30%;
-    width: 50%;
+    gap: 23%;
+    height: 37%;
+    cursor: pointer;
 }
 
-@keyframes menuBar1 {
+@keyframes bar1 {
+    50% {
+        transform: translateY(12px);
+    }
+    100% {
+        transform: translateY(12px) rotate(-45deg);
+    }
+}
+
+@keyframes bar2 {
+    100% {
+        transform: rotate(45deg);
+    }
+}
+
+@keyframes bar3 {
     0% {
-        transform: rotate(0deg);
         opacity: 1;
     }
 
     100% {
+        opacity: 0;
+    }
+}
+
+@keyframes bar1Reverse {
+    0% {
+        transform: translateY(12px) rotate(-45deg);
+    }
+    50% {
+        transform: translateY(12px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes bar2Reverse {
+    0% {
         transform: rotate(45deg);
+    }
+    100% {
+        transform: rotate(0);
+    }
+}
+
+@keyframes bar3Reverse {
+    0% {
+        opacity: 0;
+    }
+    100% {
         opacity: 1;
     }
 }
 
-@keyframes menuBar2{
+#bar1.active {
+    animation: bar1 0.5s ease-in-out forwards;
+}
 
+#bar2.active {
+    animation: bar2 0.5s ease-in-out forwards;
+}
+
+#bar3.active {
+    animation: bar3 0.01s ease-in-out forwards;
+}
+
+#bar1.reverse {
+    animation: desaparecimento 0.1s ease-in-out forwards, aparecimento 0.2s ease-in-out forwards, bar1Reverse 0.5s ease-in-out forwards;
+}
+
+#bar2.reverse {
+    animation: desaparecimento 0.1s ease-in-out forwards, aparecimento 0.2s ease-in-out forwards, bar2Reverse 0.5s ease-in-out forwards;
+}
+
+#bar3.reverse {
+    animation: bar3Reverse 0.5s ease-in-out forwards;
 }
 
 .menuBar {
@@ -114,26 +178,30 @@ header a:hover {
     background-color: black;
 }
 
-.menuBar:hover {
-    animation: menuBar1 ease-in-out forwards;
-}
-
 .nav1 {
     margin-left: 3%;
 }
 
 .nav2 {
     width: 27vw;
-    margin-right: 3%;
     display: flex;
     align-items: center;
+    margin-right: 3%;
 }
 
 .nav2 ul {
     display: flex;
     justify-content: right;
-    justify-content: space-between;
     width: 100%;
+}
+
+.nav2 li {
+    margin-right: 3%;
+}
+
+.nav3 {
+    height: 10vh;
+    background-color: #F5F5F5;
 }
 
 h2 {

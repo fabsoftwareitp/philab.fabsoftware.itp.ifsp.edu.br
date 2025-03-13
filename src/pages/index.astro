@@ -34,20 +34,20 @@ const equipamento = await getEntry('equipamentos', 'equipamentos');
                     </a>
                 </div>
 
-                <div class="menu1">
-                    <div class="menu2">
-                        <span class="menuBar"></span>
-                        <span class="menuBar"></span>
-                        <span class="menuBar"></span>
-                    </div>
-                </div>
-
                 <div class="nav2">
                     <ul>
                         <li><a href="#professores">Professores</a></li>
                         <li><a href="#disciplinas">Disciplinas</a></li>
                         <li><a href="#equipamentos">Equipamentos</a></li>
                     </ul>
+                </div>
+
+                <div class="menu1">
+                    <div class="menu2" onclick="menu1()">
+                        <span class="menuBar" id="bar1"></span>
+                        <span class="menuBar" id="bar2"></span>
+                        <span class="menuBar" id="bar3"></span>
+                    </div>
                 </div>
             </div>
         </header>
@@ -263,11 +263,40 @@ const equipamento = await getEntry('equipamentos', 'equipamentos');
 
         //menu 
 
-        function menu() {
-            const menu =  document.getElementById('menu');
+        function menu1() {
+            let bar1 = document.querySelector("#bar1");
+            let bar2 = document.querySelector("#bar2");
+            let bar3 = document.querySelector("#bar3");
 
-            menu.classList.toggle('active');
+            if (bar1.classList.contains("active")) {
+                bar1.classList.remove("active");
+                bar1.classList.add("reverse");
+
+                bar2.classList.remove("active");
+                bar2.classList.add("reverse");
+
+                bar3.classList.remove("active");
+                bar3.classList.add("reverse");
+                } else {
+                bar1.classList.remove("reverse");
+                bar1.classList.add("active");
+
+                bar2.classList.remove("reverse");
+                bar2.classList.add("active");
+
+                bar3.classList.remove("reverse");
+                bar3.classList.add("active");
+
+                menu2();
+            }
+
+        function menu2() {
+            let header = document.querySelector("header")
+            header.style.height = "20vh";
+            header.style.transform = "translate(0px 50px)"
         }
+        }
+
 
         document.querySelectorAll('.btnFlip').forEach(button => {
             button.addEventListener('click', () => {
