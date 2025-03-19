@@ -51,6 +51,14 @@ const equipamento = await getEntry('equipamentos', 'equipamentos');
                 </div>
             </div>
         </header>
+
+        <ul class="nav3">
+                <li><a href="#professores">Professores</a></li>
+
+                <li><a href="#disciplinas">Disciplinas</a></li>
+
+                <li><a href="#equipamentos">Equipamentos</a></li>
+        </ul>
     </b>
 
     <div class="paginaInicial">
@@ -286,17 +294,19 @@ const equipamento = await getEntry('equipamentos', 'equipamentos');
 
                 bar3.classList.remove("reverse");
                 bar3.classList.add("active");
-
-                menu2();
             }
+            menu2();
+        }
 
         function menu2() {
-            let header = document.querySelector("header")
-            header.style.height = "20vh";
-            header.style.transform = "translate(0px 50px)"
-        }
-        }
+            let nav3 = document.querySelector(".nav3");
 
+            if (nav3.style.display === "none" || nav3.style.display === "") {
+                nav3.style.display = "flex";
+            } else {
+                nav3.style.display = "none";
+            }
+        }
 
         document.querySelectorAll('.btnFlip').forEach(button => {
             button.addEventListener('click', () => {
