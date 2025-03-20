@@ -416,8 +416,50 @@ button .btnFlipContainer {
     display: flex;
     align-items: center;
     width: 70vw;
-    justify-content: space-around; 
+    justify-content: space-around;
 }
+
+.slides {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    position: relative;
+}
+
+.slid {
+    display: none; /* Esconde os slides por padrão */
+}
+
+.slid.first {
+    display: flex; /* Exibe o primeiro slide inicialmente */
+}
+
+.slid img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Adiciona margens nos botões para melhorar a usabilidade */
+.sliderButton {
+    padding: 10px;
+    background-color: #ccc;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+/* Exibe as informações do equipamento */
+.infoBCP, .infoBCH, .infoBMF {
+    display: none; /* Inicialmente escondido */
+    margin-top: 20px;
+}
+
+.infoBCP.show, .infoBCH.show, .infoBMF.show {
+    display: block;
+}
+
 
 .opcoes {
     width: 20vw;
@@ -483,23 +525,6 @@ li p {
     
 }
 
-
-.imgEquipamento, .slidBCP, .slidBCH, .slidBMF {
-    width: 25vw;
-    height: 67vh;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.slides, .slidBCP {
-    display: flex;
-    width: 300vw;
-}
-
-.slidBCH, .slidBMF {
-    width: 300vw;
-}
-
 .bar {
     width: 10px;
     height: 10px;
@@ -516,7 +541,6 @@ li p {
 }
 
 input {
-    display: none;
 }
 
 .slid {
@@ -527,18 +551,6 @@ input {
 .slid img {
     width: 25vw;
     height: 67vh;
-}
-
-#radio1:checked ~ .slidBCP .first,  #radio1:checked ~ .slidBMF .first #radio1:checked ~ .slidBCH .first {
-    margin-left: 0;
-}
-
-#radio2:checked ~ .slidBCP .first, #radio2:checked ~ .slidBMF .first, #radio2:checked ~ .slidBCH .first {
-    margin-left: -25vw;
-}
-
-#radio3:checked ~ .slidBCP .first, #radio3:checked ~ .slidBMF .first, #radio3:checked ~ .slidBCH .first {
-    margin-left: -50vw;
 }
 
 footer {
@@ -674,22 +686,6 @@ li details summary {
         width: 80%;
     }
 
-    .slidBCH, .slidBCP, .slidBMF, .slidBCH img, .slidBCP img, .slidBMF img {
-        height:70vh;
-    }
-
-    #radio1:checked ~ .slidBCP .first,  #radio1:checked ~ .slidBMF .first #radio1:checked ~ .slidBCH .first {
-        margin-left: 0;
-    }
-    
-    #radio2:checked ~ .slidBCP .first, #radio2:checked ~ .slidBMF .first, #radio2:checked ~ .slidBCH .first {
-        margin-left: -60vw;
-    }
-    
-    #radio3:checked ~ .slidBCP .first, #radio3:checked ~ .slidBMF .first, #radio3:checked ~ .slidBCH .first {
-        margin-left: -120vw;
-    }
-
     .imgSobre {
         display: flex;
         flex-direction: column;
@@ -721,10 +717,6 @@ li details summary {
 
     #professores {
         margin-top: 20%;
-    }
-
-    .imgEquipamento {
-        margin-bottom: 20%;
     }
 
     p {
