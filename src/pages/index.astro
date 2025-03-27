@@ -21,6 +21,51 @@ const equipamento = await getEntry('equipamentos', 'equipamentos');
     <title>PHI Lab</title>
 
     <link rel="stylesheet" href="styles/style.css">
+
+    <style>
+        .slider-container {
+            width: 80%;
+            margin: auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slides {
+            display: flex;
+        }
+
+        .slide {
+            min-width: 100%;
+            display: none; /* Ocultar todos os slides inicialmente */
+        }
+
+        .slide.active {
+            display: block; /* Mostrar apenas o slide ativo */
+        }
+
+        .slide img {
+            width: 100%;
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+    </style>
 </head>
 
 <body>
@@ -99,48 +144,18 @@ const equipamento = await getEntry('equipamentos', 'equipamentos');
 
     <div id="equipamentos">
         <h2>Equipamentos</h2>
-
         <div class="conteudoEquipamentos">
             <div class="opcoes">
-                <button id="bcp" onclick="showEquipment(0)">{equipamento.data.equipamentos[0].nome}</button>
-                <button id="bch" onclick="showEquipment(1)">{equipamento.data.equipamentos[1].nome}</button>
-                <button id="bmf" onclick="showEquipment(2)">{equipamento.data.equipamentos[2].nome}</button>
+                <button id="bcp" onclick="loadImages(0)">{equipamento.data.equipamentos[0].nome}</button>
+                <button id="bch" onclick="loadImages(1)">{equipamento.data.equipamentos[1].nome}</button>
+                <button id="bmf" onclick="loadImages(2)">{equipamento.data.equipamentos[2].nome}</button>
             </div>
 
             <div class="container">
-                <div class="slides">
-                    <div class="slidBCP">
-                        <div class="slid first">
-                            <img src={equipamento.data.equipamentos[0].capa} alt="">
-                        </div>
-                        {equipamento.data.equipamentos[0].imagens.map((imagem) => 
-                            <div class="slid">
-                                <img src={imagem} alt="" />
-                            </div>
-                        )}
-                    </div>
-
-                    <div class="slidBCH" style="display: none;">
-                        <div class="slid first">
-                            <img src={equipamento.data.equipamentos[1].capa} alt="">
-                        </div>
-                        {equipamento.data.equipamentos[1].imagens.map((imagem) => 
-                            <div class="slid">
-                                <img src={imagem} alt="" />
-                            </div>
-                        )}
-                    </div>
-
-                    <div class="slidBMF" style="display: none;">
-                        <div class="slid first">
-                            <img src={equipamento.data.equipamentos[2].capa} alt="">
-                        </div>
-                        {equipamento.data.equipamentos[2].imagens.map((imagem) => 
-                            <div class="slid">
-                                <img src={imagem} alt="" />
-                            </div>
-                        )}
-                    </div>
+                <div class="slider-container">
+                    <div class="slides" id="slider"></div>
+                    <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+                    <button class="next" onclick="moveSlide(1)">&#10095;</button>
                 </div>
 
                 <div class="infoBCP">
@@ -157,15 +172,11 @@ const equipamento = await getEntry('equipamentos', 'equipamentos');
                     <h2>{equipamento.data.equipamentos[2].nome}</h2>
                     <p>{equipamento.data.equipamentos[2].descricao}</p>
                 </div>
-
-                <div class="sliderButtons">
-                    <button class="sliderButton" onclick="showSlide(0)">Equipamento 1</button>
-                    <button class="sliderButton" onclick="showSlide(1)">Equipamento 2</button>
-                    <button class="sliderButton" onclick="showSlide(2)">Equipamento 3</button>
-                </div>
             </div>
         </div>
     </div>
+
+    <img src="/public/images/equipamentos/equipamentos/0/imagens/" alt="">
 
     <footer>
         <div class="fabrica">
@@ -178,25 +189,44 @@ const equipamento = await getEntry('equipamentos', 'equipamentos');
     </footer>
 
     <script is:inline>
-        let currentIndex = 0;
-        const slides = document.querySelectorAll(".slides > div"); // Todos os slides
-        const equipamentoInfo = document.querySelectorAll('.infoBCP, .infoBCH, .infoBMF'); // Descrições dos equipamentos
+        let currentSlide = 0;
+    let slides = [];
 
-        function showEquipment(index) {
-            showSlide(index);
-            currentIndex = index;
-        }
+    function loadImages(pasta) {
+      const slider = document.getElementById('slider');
+      slider.innerHTML = ''; // Limpar o conteúdo anterior
 
-        function showSlide(index) {
-            // Esconder todos os slides
-            slides.forEach((slide, idx) => {
-                slide.style.display = idx === index ? "flex" : "none";
-            });
+      for (let i = 0; i < 3; i++) { // Supondo que temos 3 imagens por pasta
+        const slide = document.createElement('div');
+        slide.classList.add('slide');
+        slide.innerHTML = `<img src="/images/equipamentos/equipamentos/${pasta}/imagens/${i}.jpeg" alt="Imagem ${i + 1}">`;
+        slider.appendChild(slide);
+      }
 
-            // Esconder todas as descrições e mostrar a descrição do equipamento selecionado
-            equipamentoInfo.forEach(info => info.style.display = "none");
-            document.querySelector(`.info${['BCP', 'BCH', 'BMF'][index]}`).style.display = "block";
-        }
+      slides = document.querySelectorAll('.slide');
+      currentSlide = 0;
+      showSlide(currentSlide);
+    }
+
+    function showSlide(index) {
+      slides.forEach(slide => slide.style.display = 'none');
+      if (slides.length > 0) {
+        slides[index].style.display = 'block';
+      }
+    }
+
+    function moveSlide(step) {
+      if (slides.length === 0) return;
+      currentSlide += step;
+      if (currentSlide < 0) {
+        currentSlide = slides.length - 1;
+      } else if (currentSlide >= slides.length) {
+        currentSlide = 0;
+      }
+      showSlide(currentSlide);
+    }
+
+    loadImages(0); // Carreg
 
         function menu1() {
             let bar1 = document.querySelector("#bar1");
@@ -234,13 +264,6 @@ const equipamento = await getEntry('equipamentos', 'equipamentos');
                 nav3.style.display = "none";
             }
         }
-
-        document.querySelectorAll('.btnFlip').forEach(button => {
-            button.addEventListener('click', () => {
-                const flip = button.closest('.flip');
-                flip.classList.toggle('flipped');
-            });
-        });
     </script>
 
 </body>
