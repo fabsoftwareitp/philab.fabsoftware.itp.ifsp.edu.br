@@ -415,51 +415,56 @@ button .btnFlipContainer {
 .container {
     display: flex;
     align-items: center;
-    width: 70vw;
+    width: 100vw;
     justify-content: space-around;
+}
+
+.slider-container {
+    width: 50%;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
 }
 
 .slides {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-    position: relative;
 }
 
-.slid {
-    display: none; /* Esconde os slides por padrão */
+.slide {
+    display: none;
 }
 
-.slid.first {
-    display: flex; /* Exibe o primeiro slide inicialmente */
+.slide.active {
+    display: block;
 }
 
-.slid img {
+.slide img {
     max-width: 100%;
-    height: auto;
+    border-radius: 2%;
 }
 
-/* Adiciona margens nos botões para melhorar a usabilidade */
-.sliderButton {
-    padding: 10px;
-    background-color: #ccc;
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
     border: none;
+    padding: 10px;
     cursor: pointer;
-    font-size: 16px;
-    margin-top: 10px;
 }
 
-/* Exibe as informações do equipamento */
-.infoBCP, .infoBCH, .infoBMF {
-    display: none; /* Inicialmente escondido */
-    margin-top: 20px;
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
 }
 
 .infoBCP.show, .infoBCH.show, .infoBMF.show {
     display: block;
 }
-
 
 .opcoes {
     width: 20vw;
@@ -471,11 +476,8 @@ button .btnFlipContainer {
     border-bottom: solid 0.4vh #1C3C61;
 }
 
-#bcp {font-weight: bold; color:#1C3C61; padding-top: 0;}
-
-.infoBCP, .infoBCH, .infoBMF {
-    width: 29vw;
-    text-align: justify;
+#bcp {
+    font-weight: bold; color:#1C3C61; padding-top: 0;
 }
 
 .infoBCP h2, .infoBCH h2, .infoBMF h2 {
@@ -645,7 +647,6 @@ li details summary {
 
     .container {
         display: flex;
-        width: 100vw;
         height: auto;
         justify-content: space-between;
         flex-direction: column;

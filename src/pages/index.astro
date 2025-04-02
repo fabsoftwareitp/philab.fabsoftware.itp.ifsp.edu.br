@@ -1,6 +1,7 @@
 ---
 import ProfComponent from "../components/ProfComponent.astro";
 import DisciComponent from "../components/DisciComponent.astro";
+import EquipComponent from "../components/EquipComponent.astro";
 import { getCollection, getEntry } from "astro:content";
 
 // Pega todos os arquivos md de uma pasta especificada na pasta content
@@ -9,7 +10,9 @@ const disciplinas = await getCollection('disciplinas');
 
 // Pega um único arquivo md
 const infoGeneric = await getEntry('pagInicial', 'pagina-inicial');
-const equipamento = await getEntry('equipamentos', 'equipamentos');
+const equipamentos = await getCollection('equipamentos');
+
+(equipamentos.map((e) => console.log(e.body)))
 ---
 
 <!DOCTYPE html>
@@ -21,51 +24,6 @@ const equipamento = await getEntry('equipamentos', 'equipamentos');
     <title>PHI Lab</title>
 
     <link rel="stylesheet" href="styles/style.css">
-
-    <style>
-        .slider-container {
-            width: 80%;
-            margin: auto;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .slides {
-            display: flex;
-        }
-
-        .slide {
-            min-width: 100%;
-            display: none; /* Ocultar todos os slides inicialmente */
-        }
-
-        .slide.active {
-            display: block; /* Mostrar apenas o slide ativo */
-        }
-
-        .slide img {
-            width: 100%;
-        }
-
-        .prev, .next {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-        }
-
-        .prev {
-            left: 10px;
-        }
-
-        .next {
-            right: 10px;
-        }
-    </style>
 </head>
 
 <body>
@@ -143,40 +101,8 @@ const equipamento = await getEntry('equipamentos', 'equipamentos');
     </div>
 
     <div id="equipamentos">
-        <h2>Equipamentos</h2>
-        <div class="conteudoEquipamentos">
-            <div class="opcoes">
-                <button id="bcp" onclick="loadImages(0)">{equipamento.data.equipamentos[0].nome}</button>
-                <button id="bch" onclick="loadImages(1)">{equipamento.data.equipamentos[1].nome}</button>
-                <button id="bmf" onclick="loadImages(2)">{equipamento.data.equipamentos[2].nome}</button>
-            </div>
-
-            <div class="container">
-                <div class="slider-container">
-                    <div class="slides" id="slider"></div>
-                    <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-                    <button class="next" onclick="moveSlide(1)">&#10095;</button>
-                </div>
-
-                <div class="infoBCP">
-                    <h2>{equipamento.data.equipamentos[0].nome}</h2>
-                    <p>{equipamento.data.equipamentos[0].descricao}</p>
-                </div>
-
-                <div class="infoBCH" style="display: none;">
-                    <h2>{equipamento.data.equipamentos[1].nome}</h2>
-                    <p>{equipamento.data.equipamentos[1].descricao}</p>
-                </div>
-
-                <div class="infoBMF" style="display: none;">
-                    <h2>{equipamento.data.equipamentos[2].nome}</h2>
-                    <p>{equipamento.data.equipamentos[2].descricao}</p>
-                </div>
-            </div>
-        </div>
+        {equipamentos.map((equipamento) => <EquipComponent frontmatter={equipamento.data} content={equipamento.body}/>)}
     </div>
-
-    <img src="/public/images/equipamentos/equipamentos/0/imagens/" alt="">
 
     <footer>
         <div class="fabrica">
@@ -189,44 +115,6 @@ const equipamento = await getEntry('equipamentos', 'equipamentos');
     </footer>
 
     <script is:inline>
-        let currentSlide = 0;
-    let slides = [];
-
-    function loadImages(pasta) {
-      const slider = document.getElementById('slider');
-      slider.innerHTML = ''; // Limpar o conteúdo anterior
-
-      for (let i = 0; i < 3; i++) { // Supondo que temos 3 imagens por pasta
-        const slide = document.createElement('div');
-        slide.classList.add('slide');
-        slide.innerHTML = `<img src="/images/equipamentos/equipamentos/${pasta}/imagens/${i}.jpeg" alt="Imagem ${i + 1}">`;
-        slider.appendChild(slide);
-      }
-
-      slides = document.querySelectorAll('.slide');
-      currentSlide = 0;
-      showSlide(currentSlide);
-    }
-
-    function showSlide(index) {
-      slides.forEach(slide => slide.style.display = 'none');
-      if (slides.length > 0) {
-        slides[index].style.display = 'block';
-      }
-    }
-
-    function moveSlide(step) {
-      if (slides.length === 0) return;
-      currentSlide += step;
-      if (currentSlide < 0) {
-        currentSlide = slides.length - 1;
-      } else if (currentSlide >= slides.length) {
-        currentSlide = 0;
-      }
-      showSlide(currentSlide);
-    }
-
-    loadImages(0); // Carreg
 
         function menu1() {
             let bar1 = document.querySelector("#bar1");
@@ -264,6 +152,13 @@ const equipamento = await getEntry('equipamentos', 'equipamentos');
                 nav3.style.display = "none";
             }
         }
+
+        document.querySelectorAll('.btnFlip').forEach(button => {
+            button.addEventListener('click', () => {
+                let flip = button.closest('.flip');
+                flip.classList.toggle('flipped');
+            });
+        });
     </script>
 
 </body>
