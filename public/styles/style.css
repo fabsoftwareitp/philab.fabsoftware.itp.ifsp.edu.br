@@ -426,18 +426,6 @@ button .btnFlipContainer {
     overflow: hidden;
 }
 
-.slides {
-    display: flex;
-}
-
-.slide {
-    display: none;
-}
-
-.slide.active {
-    display: block;
-}
-
 .slide img {
     max-width: 100%;
     border-radius: 2%;
@@ -471,18 +459,13 @@ button .btnFlipContainer {
     height: 50vh;
 }
 
-#bch {
-    border-top: solid 0.4vh #1C3C61;
-    border-bottom: solid 0.4vh #1C3C61;
-}
-
-#bcp {
-    font-weight: bold; color:#1C3C61; padding-top: 0;
-}
-
 .infoBCP h2, .infoBCH h2, .infoBMF h2 {
     font-size: 1.5rem;
     margin-top: 0;
+}
+
+.bancadas-de-circuitos-pneumaticos, .bancada-de-mecanica-dos-fluidos  {
+    display: none;
 }
 
 #equipamentos, #disciplinas {
@@ -540,19 +523,6 @@ li p {
 .bar:hover {
     background-color: #D9D9D9;
     border: 2px #D9D9D9 solid;
-}
-
-input {
-}
-
-.slid {
-    width: 25vw;
-    transition: .5s;
-}
-
-.slid img {
-    width: 25vw;
-    height: 67vh;
 }
 
 footer {

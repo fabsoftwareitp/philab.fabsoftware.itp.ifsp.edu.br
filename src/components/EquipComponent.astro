@@ -1,55 +1,31 @@
 ---
-const {frontmatter, content} = Astro.props;
-const idSlider = frontmatter.nome.trim().toLowerCase();
+let { frontmatter, content } = Astro.props;
+let a = frontmatter.nome.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/\s+/g, "-");
 ---
 
-        <div class="conteudoEquipamentos">
-            <div class="opcoes">
-                <button>{frontmatter.nome}</button>
+<div class="conteudoEquipamentos">
+    <div class="opcoes">
+        <button>{frontmatter.nome}</button>
+    </div>
+
+    <div class="container">
+        <div class={`slide ${a}`}>
+            <div class="slider-container" data-slider={a}>
+                <div id="slider">
+                    {frontmatter.imagens.map((img) => (
+                        <img src={img} class={`slide ${a}`} alt="Equipamentos"/>
+                    ))}
+                </div>
+                <button class="prev">&#10094;</button>
+                <button class="next">&#10095;</button>
             </div>
 
-            <div class="container">
-                <div class="slider-container">
-                    <div class="slides" id="slider">
-                        {frontmatter.imagens.map((img) => <img src={img} class={frontmatter.nome} data-slide={idSlider} alt="Equipamentos" />)}
-                    </div>
-                    <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-                    <button class="next" onclick="moveSlide(1)">&#10095;</button>
-                </div>
-
-                <div class="infoBCP">
-                    <h2>{frontmatter.nome}</h2>
-                    <p>{content}</p>
-                </div>
+            <div>
+                <h2>{frontmatter.nome}</h2>
+                <p>{content}</p>
             </div>
         </div>
+    </div>
+</div>
 
-        <script is:inline define:vars={{idSlider}}>
-            let slideIndex = 1;
-            showDivs(slideIndex)
-
-            function moveSlide(n) {
-                showDivs(slideIndex += n);
-            }
-
-            function showDivs(n) {
-                let i;
-                console.log(idSlider);
-                let slides = document.querySelectorAll(`#${idSlider}`);
-
-
-                if (n > slides.length) {
-                    slideIndex = 1;
-                }
-
-                if (n < 1) {
-                    slideIndex = slides.length;
-                }
-
-                for (i = 0; i < slides.length; i++) {
-                    slides[i].style.display = "none";
-                }
-
-                slides[slideIndex-1].style.display = "block";
-            }
-        </script>
+<script src="/js/slider.js" defer></script>
