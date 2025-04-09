@@ -100,9 +100,16 @@ const equipamentos = await getCollection('equipamentos');
         </div>
     </div>
 
-    <div id="equipamentos">
-        {equipamentos.map((equipamento) => <EquipComponent frontmatter={equipamento.data} content={equipamento.body}/>)}
-    </div>
+        <div id="equipamentos">
+            <h2>Equipamentos</h2>
+            <div class="conteudoEquipamentos">
+                <div class="opcoes">
+                    {equipamentos.map((equipamento) => 
+                        <button class="btn-equipamento" data-target={equipamento.data.nome.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/\s+/g, "-")}>{equipamento.data.nome}</button>
+                    )}
+                </div>
+            {equipamentos.map((equipamento) => <EquipComponent frontmatter={equipamento.data} content={equipamento.body}/>)}
+        </div>
 
     <footer>
         <div class="fabrica">

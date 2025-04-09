@@ -1,19 +1,13 @@
 ---
 let { frontmatter, content } = Astro.props;
-let a = frontmatter.nome.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/\s+/g, "-");
+let nome = frontmatter.nome.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/\s+/g, "-");
 ---
 
-<div class="conteudoEquipamentos">
-    <div class="opcoes">
-        <button>{frontmatter.nome}</button>
-    </div>
-
-    <div class="container">
-        <div class={`slide ${a}`}>
-            <div class="slider-container" data-slider={a}>
+        <div class={`slide ${nome}`} data-slide={nome}>
+            <div class="slider-container">
                 <div id="slider">
                     {frontmatter.imagens.map((img) => (
-                        <img src={img} class={`slide ${a}`} alt="Equipamentos"/>
+                        <img src={img} alt="Equipamentos"/>
                     ))}
                 </div>
                 <button class="prev">&#10094;</button>
@@ -25,7 +19,5 @@ let a = frontmatter.nome.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowe
                 <p>{content}</p>
             </div>
         </div>
-    </div>
-</div>
 
 <script src="/js/slider.js" defer></script>

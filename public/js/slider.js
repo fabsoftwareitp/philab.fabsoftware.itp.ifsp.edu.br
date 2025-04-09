@@ -1,6 +1,30 @@
 document.addEventListener("DOMContentLoaded", () => {
+    const buttons = document.querySelectorAll(".btn-equipamento");
+    const todosSlides = document.querySelectorAll(".slide");
+
+    function esconderTodosSlides() {
+        todosSlides.forEach(slide => {
+            slide.style.display = "none";
+        });
+    }
+
+    if (todosSlides[0]) todosSlides[0].style.display = "block";
+
+    buttons.forEach(button => {
+        button.addEventListener("click", () => {
+            let alvo = button.dataset.target;
+            const slideAtual = document.querySelector(`.slide.${alvo}`);
+
+            esconderTodosSlides();
+
+            if (slideAtual) {
+                slideAtual.style.display = "block";
+            }
+        });
+    });
+
     document.querySelectorAll(".slider-container").forEach((container) => {
-        let slides = container.querySelectorAll("img");
+        const slides = container.querySelectorAll("img");
         let slideIndex = 1;
 
         function showDivs(n) {
