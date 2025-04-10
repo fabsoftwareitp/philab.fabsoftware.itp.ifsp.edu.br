@@ -382,7 +382,7 @@ button .btnFlipContainer {
 
 
 #professores {
-    margin-top: 12vh;
+    margin-top: 10vh;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -394,41 +394,58 @@ button .btnFlipContainer {
 }
 
 .conteudoEquipamentos {
+    width: 80%;
     display: flex;
-    justify-content: space-between;  
-    width: 80vw;
-    height: 85vh;
-    align-items: center;
+    margin-top: 12vh;
 }
 
 .opcoes button {    
     font-size: 1.3rem;
     padding-top: 5vh;
     padding-bottom: 7vh;
-    width: 20vw;
     text-align: justify;
     background: none;
     border: none;
+    border-bottom: solid 0.4vh #1C3C61;
     cursor: pointer;
+    font-family: "Open Sans", sans-serif;
 }
 
-.container {
-    display: flex;
-    align-items: center;
-    width: 100vw;
-    justify-content: space-around;
+.slide {
+    justify-content: center;
+    width: 75%;
 }
 
 .slider-container {
-    width: 50%;
-    margin: auto;
     position: relative;
     overflow: hidden;
+    width: 450px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 3%;
 }
 
-.slide img {
-    max-width: 100%;
-    border-radius: 2%;
+#slider {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#slider img {
+    height: 100%;
+    width: 450px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.content {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
 }
 
 .prev, .next {
@@ -455,13 +472,11 @@ button .btnFlipContainer {
 }
 
 .opcoes {
-    width: 20vw;
-    height: 50vh;
-}
-
-.infoBCP h2, .infoBCH h2, .infoBMF h2 {
-    font-size: 1.5rem;
-    margin-top: 0;
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .bancadas-de-circuitos-pneumaticos, .bancada-de-mecanica-dos-fluidos  {
@@ -531,6 +546,7 @@ footer {
     align-items: center;
     height: 25vh;
     justify-content:center;
+    width: 100vw;
     margin-top: 10vh;
 }
 
@@ -609,40 +625,46 @@ li details summary {
         height: 4vh;
     }
 
-    .conteudoEquipamentos {
-        flex-direction: column;
-        width: 100%;
-        height: auto;
-    }
-
-    .container {
-        display: flex;
-        height: auto;
-        justify-content: space-between;
-        flex-direction: column;
-    }
-
     h2 {
         max-width: 100%;
     }
     
-    .opcoes {
-        display: flex;
+    .conteudoEquipamentos {
+        flex-direction: column;
         width: 100vw;
-        justify-content: center;
+        margin-top: 20%;
+    }
+
+    .opcoes {
+        width: 100%;
+        flex-direction: row;
         justify-content: space-between;
-        height: 18vh;
+        align-items: center;
     }
 
     .opcoes button {
-        height: 15vh;
-        width: 26.66vw;
-        padding: 0 3vw 0 3vw;
+        height: 18vh;
+        border: none;
+        border-right: solid 0.4vh #1C3C61;
     }
-    
-    .slid, .slid img,.imgEquipamento {
+
+    .slide {
+        flex-direction: column-reverse;
         width: 100vw;
-        height: auto;
+        align-items: center;
+        margin-top: 20%;
+    }
+
+    .slider-container {
+        width: 90vw;
+        margin-top: 20%;
+        margin-right: 0;
+    }
+
+    .content {
+        width: 100vw;
+        align-items: center;
+        text-align: center;
     }
 
     .infoBCP, .infoBCH, .infoBMF {

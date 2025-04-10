@@ -8,17 +8,18 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    if (todosSlides[0]) todosSlides[0].style.display = "block";
+    if (todosSlides[0]) todosSlides[0].style.display = "flex";
 
     buttons.forEach(button => {
         button.addEventListener("click", () => {
+
             let alvo = button.dataset.target;
             const slideAtual = document.querySelector(`.slide.${alvo}`);
 
             esconderTodosSlides();
 
             if (slideAtual) {
-                slideAtual.style.display = "block";
+                slideAtual.style.display = "flex";
             }
         });
     });
