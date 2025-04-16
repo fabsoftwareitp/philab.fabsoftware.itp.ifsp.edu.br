@@ -3,12 +3,11 @@ import { config, fields, collection } from '@keystatic/core';
 
 export default config({
   storage: {
-    // kind: 'local',
-    kind: 'local',
-    // repo: {
-    //   owner: 'fabsoftwareitp',
-    //   name: 'philab.fabsoftware.itp.ifsp.edu.br' 
-    // }  
+    kind: 'github',
+    repo: {
+      owner: 'fabsoftwareitp',
+      name: 'philab.fabsoftware.itp.ifsp.edu.br' 
+    }  
   },
   collections: {
     professores: collection({
