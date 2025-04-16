@@ -101,36 +101,22 @@ export default config({
       label: 'Equipamentos',
       slugField: 'title',
       path: 'src/content/equipamentos/*',
-      format: { contentField: 'emptyContent' },
+      format: { contentField: 'content' },
       schema: {
         title: fields.slug({ name: { label: 'Title' } }),
-        emptyContent: fields.emptyContent({ extension: 'md' }),
-        equipamentos: fields.array(
-          fields.object({
-            nome: fields.text({ label: 'Nome do equipamento' }),
-            descricao: fields.text({ label: 'Descrição', multiline: true, }),
-            capa: fields.image({
-              label: 'Capa',
-              directory: 'public/images/equipamentos',
-              publicPath: '/images/equipamentos/',
-            }),
-            imagens: fields.array(
-              fields.image({
-                label: 'Imagens',
-                directory: 'public/images/equipamentos',
-                publicPath: '/images/equipamentos/',
-              }),
-              {
-                label: 'Imagens',
-              }
-            ),
+        nome: fields.text({ label: 'Nome do equipamento' }),
+        imagens: fields.array(
+          fields.image({
+            label: 'Imagens',
+            directory: 'public/images/equipamentos',
+            publicPath: '/images/equipamentos/',
           }),
-          // Labelling options
           {
-            label: 'Equipamento',
-            itemLabel: props => props.fields.nome.value
-          }
+            label: 'Imagens',
+          },
+          // Labelling options
         ),
+        content: fields.markdoc({ label: 'Descrição', extension: 'md' }),
       },
     }),
   },
