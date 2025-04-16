@@ -180,9 +180,23 @@ declare module 'astro:content' {
 } & { render(): Render[".md"] };
 };
 "equipamentos": {
-"equipamentos.md": {
-	id: "equipamentos.md";
-  slug: "equipamentos";
+"bancada-de-circuitos-hidraulicos.md": {
+	id: "bancada-de-circuitos-hidraulicos.md";
+  slug: "bancada-de-circuitos-hidraulicos";
+  body: string;
+  collection: "equipamentos";
+  data: any
+} & { render(): Render[".md"] };
+"bancada-de-mecanica-dos-fluidos.md": {
+	id: "bancada-de-mecanica-dos-fluidos.md";
+  slug: "bancada-de-mecanica-dos-fluidos";
+  body: string;
+  collection: "equipamentos";
+  data: any
+} & { render(): Render[".md"] };
+"bancadas-de-circuitos-pneumaticos.md": {
+	id: "bancadas-de-circuitos-pneumaticos.md";
+  slug: "bancadas-de-circuitos-pneumaticos";
   body: string;
   collection: "equipamentos";
   data: any

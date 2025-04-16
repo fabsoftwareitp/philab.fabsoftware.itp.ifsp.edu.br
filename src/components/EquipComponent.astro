@@ -1,0 +1,23 @@
+---
+let { frontmatter, content } = Astro.props;
+let nome = frontmatter.nome.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/\s+/g, "-");
+---
+
+        <div class={`slide ${nome}`} data-slide={nome}>
+            <div class="slider-container">
+                <div id="slider">
+                    {frontmatter.imagens.map((img) => (
+                        <img src={img} alt="Equipamentos"/>
+                    ))}
+                </div>
+                <button class="prev">&#10094;</button>
+                <button class="next">&#10095;</button>
+            </div>
+
+            <div class="content">
+                <h2>{frontmatter.nome}</h2>
+                <p>{content}</p>
+            </div>
+        </div>
+
+<script src="/js/slider.js" defer></script>

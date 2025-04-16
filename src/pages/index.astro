@@ -1,6 +1,7 @@
 ---
 import ProfComponent from "../components/ProfComponent.astro";
 import DisciComponent from "../components/DisciComponent.astro";
+import EquipComponent from "../components/EquipComponent.astro";
 import { getCollection, getEntry } from "astro:content";
 
 // Pega todos os arquivos md de uma pasta especificada na pasta content
@@ -9,7 +10,7 @@ const disciplinas = await getCollection('disciplinas');
 
 // Pega um único arquivo md
 const infoGeneric = await getEntry('pagInicial', 'pagina-inicial');
-const equipamento = await getEntry('equipamentos', 'equipamentos');
+const equipamentos = await getCollection('equipamentos');
 ---
 
 <!DOCTYPE html>
@@ -24,34 +25,39 @@ const equipamento = await getEntry('equipamentos', 'equipamentos');
 </head>
 
 <body>
-    <b>
-        <header>
-            <a href="#sobre">
-                <h3 id="phiHeader">PHI Lab</h3>
-            </a>
+    <header>
+        <div class="navbar">
+            <div class="nav1">
+                <a href="#sobre">
+                    <h3 id="phiHeader">PHI Lab</h3>
+                </a>
+            </div>
 
-            <div id="menu">
-
-                <div id="menuBTN">
-                    <ul>
-                        <li id="hamb1"></li>
-                        <li id="hamb2"></li>
-                        <li id="hamb3"></li>
-                    </ul>
-                </div>
-
-                <ul id="nav">
+            <div class="nav2">
+                <ul>
                     <li><a href="#professores">Professores</a></li>
                     <li><a href="#disciplinas">Disciplinas</a></li>
                     <li><a href="#equipamentos">Equipamentos</a></li>
                 </ul>
             </div>
 
-        </header>
-    </b>
+            <div class="menu1">
+                <div class="menu2" onclick="menu1()">
+                    <span class="menuBar" id="bar1"></span>
+                    <span class="menuBar" id="bar2"></span>
+                    <span class="menuBar" id="bar3"></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <ul class="nav3">
+        <li><a href="#professores">Professores</a></li>
+        <li><a href="#disciplinas">Disciplinas</a></li>
+        <li><a href="#equipamentos">Equipamentos</a></li>
+    </ul>
 
     <div class="paginaInicial">
-
         <div class="title">
             <h1>Laboratório de Pneumática e Hidráulica</h1>
             <h4>(PHI Lab)</h4>
@@ -62,28 +68,23 @@ const equipamento = await getEntry('equipamentos', 'equipamentos');
             <img class="img2" src="/fundos/2H.jpeg" alt="">
             <img class="img2" src="/fundos/3A.jpeg" alt="">
             <img class="img1" src="/fundos/4B.jpeg" alt="">
-
         </div>
     </div>
 
     <div id="sobre">
-        <b>
-            <h2>Sobre o Laboratório</h2>
-        </b>
+        <h2>Sobre o Laboratório</h2>
         <p>{infoGeneric.data.sobre}</p>
 
         <div class="imgSobre">
-                <img class="img3" src={infoGeneric.data.img1} alt="" />
-                <img class="img4" src={infoGeneric.data.img2} alt="" />
-                <img class="img3" src={infoGeneric.data.img3} alt="" />
+            <img class="img3" src={infoGeneric.data.img1} alt="" />
+            <img class="img4" src={infoGeneric.data.img2} alt="" />
+            <img class="img3" src={infoGeneric.data.img3} alt="" />
         </div>
     </div>
 
     <div id="professores">
-        <b>
-            <h2>Professores</h2>
-        </b>
-        <p class="p">  {infoGeneric.data.sobreProf}</p>
+        <h2>Professores</h2>
+        <p class="p">{infoGeneric.data.sobreProf}</p>
 
         <div class="cardProf">
             {profs.map((prof) => <ProfComponent frontmatter={prof.data} />)}
@@ -92,106 +93,23 @@ const equipamento = await getEntry('equipamentos', 'equipamentos');
 
     <div id="disciplinas">
         <h2>Disciplinas que utilizam o PHI Lab</h2>
-
         <div class="cursos">
             {disciplinas.map((disciplina) => <DisciComponent frontmatter={disciplina.data} />)}
         </div>
-
     </div>
 
-    <div id="equipamentos">
-        <h2>Equipamentos</h2>
-
-        <div class="conteudoEquipamentos">
-
-            <div class="opcoes">
-                <button id="bcp" onclick="bcp()">{equipamento.data.equipamentos[0].nome}</button>
-                <button id="bch" onclick="bch()">{equipamento.data.equipamentos[1].nome}</button>
-                <button id="bmf" onclick="bmf()">{equipamento.data.equipamentos[2].nome}</button>
-            </div>
-
-            <div class="container">
-
-                <div class="imgEquipamento">
-
-                    <div class="slides">
-
-                        <input type="radio" name="radio" id="radio1" checked>
-                        <input type="radio" name="radio" id="radio2">
-                        <input type="radio" name="radio" id="radio3">
-
-                        <div class="slidBCP">
-
-                            <div class="slid first">
-                                <img src={equipamento.data.equipamentos[0].capa} alt="">
-                            </div>
-
-                            {equipamento.data.equipamentos[0].imagens.map((imagem) => 
-                                <div class="slid">
-                                    <img src={imagem} alt="" />
-                                </div>
-                            )}
-                            
-                        </div>
-
-                        <div class="slidBCH" style="display: none;">
-                            
-                            <div class="slid first">
-                                <img src={equipamento.data.equipamentos[1].capa} alt="">
-                            </div>
-
-                            {equipamento.data.equipamentos[1].imagens.map((imagem) => 
-                                <div class="slid">
-                                    <img src={imagem} alt="" />
-                                </div>
-                            )}
-                            
-                        </div>
-
-                        <div class="slidBMF" style="display: none;">
-                            
-                            <div class="slid first">
-                                <img src={equipamento.data.equipamentos[2].capa} alt="">
-                            </div>
-
-                            {equipamento.data.equipamentos[2].imagens.map((imagem) => 
-                                <div class="slid">
-                                    <img src={imagem} alt="" />
-                                </div>
-                            )}
-                            
-                        </div>
-                    </div>
-
-                    <div class="navigation">
-                        <label class="bar" for="radio1"></label>
-                        <label class="bar" for="radio2"></label>
-                        <label class="bar" for="radio3"></label>
-                    </div>
-
+        <div id="equipamentos">
+            <h2>Equipamentos</h2>
+            <div class="conteudoEquipamentos">
+                <div class="opcoes">
+                    {equipamentos.map((equipamento) => 
+                        <button class="btn-equipamento" data-target={equipamento.data.nome.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/\s+/g, "-")}>{equipamento.data.nome}</button>
+                    )}
                 </div>
-
-                <div class="infoBCP">
-                    <h2>{equipamento.data.equipamentos[0].nome}</h2>
-                    <p>{equipamento.data.equipamentos[0].descricao}</p>
-                </div>
-
-                <div class="infoBCH" style="display: none;">
-                    <h2>{equipamento.data.equipamentos[1].nome}</h2>
-                    <p>{equipamento.data.equipamentos[1].descricao}</p>
-                </div>
-
-                <div class="infoBMF" style="display: none;">
-                    <h2>{equipamento.data.equipamentos[2].nome}</h2>
-                    <p>{equipamento.data.equipamentos[2].descricao}</p>
-                </div>
-            </div>
+            {equipamentos.map((equipamento) => <EquipComponent frontmatter={equipamento.data} content={equipamento.body}/>)}
         </div>
 
-    </div>
-
     <footer>
-
         <div class="fabrica">
             <img src="fundos/fabrica.png" alt="">
         </div>
@@ -199,82 +117,53 @@ const equipamento = await getEntry('equipamentos', 'equipamentos');
         <div class="if">
             <img src="fundos/logo-if.png" alt="">
         </div>
-
     </footer>
 
     <script is:inline>
-        function bcp() {
-            document.getElementById("bcp").style.color = "#1C3C61";
-            document.getElementById("bch").style.color = "black";
-            document.getElementById("bmf").style.color = "black";
 
-            document.getElementById("bcp").style.fontWeight = "bold";
-            document.getElementById("bch").style.fontWeight = "normal";
-            document.getElementById("bmf").style.fontWeight = "normal";
+        function menu1() {
+            let bar1 = document.querySelector("#bar1");
+            let bar2 = document.querySelector("#bar2");
+            let bar3 = document.querySelector("#bar3");
 
-            document.querySelector(".infoBCP").style.display = "block";
-            document.querySelector(".infoBCH").style.display = "none";
-            document.querySelector(".infoBMF").style.display = "none";
+            if (bar1.classList.contains("active")) {
+                bar1.classList.remove("active");
+                bar1.classList.add("reverse");
 
-            document.querySelector(".slidBCP").style.display = "flex";
-            document.querySelector(".slidBCH").style.display = "none";
-            document.querySelector(".slidBMF").style.display = "none";
+                bar2.classList.remove("active");
+                bar2.classList.add("reverse");
+
+                bar3.classList.remove("active");
+                bar3.classList.add("reverse");
+            } else {
+                bar1.classList.remove("reverse");
+                bar1.classList.add("active");
+
+                bar2.classList.remove("reverse");
+                bar2.classList.add("active");
+
+                bar3.classList.remove("reverse");
+                bar3.classList.add("active");
+            }
+            menu2();
         }
 
-        function bch() {
-            document.getElementById("bch").style.color = "#1C3C61";
-            document.getElementById("bcp").style.color = "black";
-            document.getElementById("bmf").style.color = "black";
+        function menu2() {
+            let nav3 = document.querySelector(".nav3");
 
-            document.getElementById("bcp").style.fontWeight = "normal";
-            document.getElementById("bch").style.fontWeight = "bold";
-            document.getElementById("bmf").style.fontWeight = "normal";
-
-            document.querySelector(".infoBCP").style.display = "none";
-            document.querySelector(".infoBCH").style.display = "block";
-            document.querySelector(".infoBMF").style.display = "none";
-
-            document.querySelector(".slidBCP").style.display = "none";
-            document.querySelector(".slidBCH").style.display = "flex";
-            document.querySelector(".slidBMF").style.display = "none";
-
+            if (nav3.style.display === "none" || nav3.style.display === "") {
+                nav3.style.display = "flex";
+            } else {
+                nav3.style.display = "none";
+            }
         }
-
-        function bmf() {
-            document.getElementById("bmf").style.color = "#1C3C61";
-            document.getElementById("bcp").style.color = "black";
-            document.getElementById("bch").style.color = "black";
-            
-            document.getElementById("bcp").style.fontWeight = "normal";
-            document.getElementById("bch").style.fontWeight = "normal";
-            document.getElementById("bmf").style.fontWeight = "bold";
-
-            document.querySelector(".infoBCP").style.display = "none";
-            document.querySelector(".infoBCH").style.display = "none";
-            document.querySelector(".infoBMF").style.display = "block";
-
-            document.querySelector(".slidBCP").style.display = "none";
-            document.querySelector(".slidBCH").style.display = "none";
-            document.querySelector(".slidBMF").style.display = "flex";
-        }
-
-        //menu 
-
-        function menu() {
-            const menu =  document.getElementById('menu');
-
-            menu.classList.toggle('active');
-        }
-        const menuBTN = document.getElementById('menuBTN');
-        menuBTN.addEventListener('click', menu);
 
         document.querySelectorAll('.btnFlip').forEach(button => {
             button.addEventListener('click', () => {
-                const flip = button.closest('.flip');
+                let flip = button.closest('.flip');
                 flip.classList.toggle('flipped');
             });
         });
-
     </script>
 
 </body>

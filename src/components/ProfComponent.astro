@@ -5,23 +5,23 @@ const {frontmatter} = Astro.props;
 <div class="caixaProf flip">
 
     <div class="caixaProf caixaFront">
-        <img class="foto" src={frontmatter.avatar} alt={frontmatter.title}>
-
         <div class="infoProfs">
             <b>
-                <p>{frontmatter.cargo}</p>
+                <p class="centralizarTexto">{frontmatter.cargo}</p>
             </b>
-            <p class="nome">{frontmatter.nomeCompleto}</p>
+            <p class="centralizarTexto">{frontmatter.nomeCompleto}</p>
             <button class="btnFlip">Ver Mais</button>
         </div>
-
+         <img class="foto" src={frontmatter.avatar} alt={frontmatter.title}>
     </div>
 
-    <div class="caixaEnd">
+    <div class="caixaEnd ">
         <b><p class="nome">{frontmatter.nomeCompleto}</p></b>
         <p>Curriculum Lattes: <a href={frontmatter.curriculo}>{frontmatter.nomeCompleto}</a></p>
         <p>Contato: <a class="contato">{frontmatter.contato}</a></p>
-        <button class="btnFlip">Ver Menos</button>
+        <div class="btnFlipContainer">
+            <button class="btnFlip">Ver Menos</button>
+        </div>
     </div>
 
 </div>
