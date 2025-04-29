@@ -279,6 +279,10 @@ p {
     box-shadow: 0vh 1vh 1vh #00000067;
 }
 
+.nome, .curriculo, .contato1 {
+    text-align: center;
+}
+
 .nome {
     font-size: 0.95rem;
     line-height: 2.7vh;
@@ -346,6 +350,7 @@ p {
 .caixaEnd {
     display: none;
     transform: rotateY(180deg);
+    height: 38.5vh;
 }
 
 .flip.flipped {
